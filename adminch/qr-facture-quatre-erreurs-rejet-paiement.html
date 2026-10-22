@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR-facture : les quatre erreurs qui font rejeter un paiement — AdminCH</title>
+<meta name="description" content="Adresse combinée, référence incompatible avec l&#x27;IBAN, clé de contrôle fausse, caractères et longueurs : quatre non-conformités qu&#x27;AdminCH refuse.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="QR-facture : les quatre erreurs qui font rejeter un paiement — AdminCH">
+<meta property="og:description" content="Adresse combinée, référence incompatible avec l&#x27;IBAN, clé de contrôle fausse, caractères et longueurs : quatre non-conformités qu&#x27;AdminCH refuse.">
+<link rel="canonical" href="https://tessalio.ch/adminch/qr-facture-quatre-erreurs-rejet-paiement.html">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">AdminCH</span></div>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#prix">Prix</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap prose">
+<h1>QR-facture : les quatre erreurs qui font rejeter un paiement</h1>
+<p>Une QR-facture est lue par une machine, qui applique une spécification. Les Swiss Implementation Guidelines publiées par SIX décrivent, champ par champ, ce qui est admis. Quand une donnée sort de ce cadre, le fichier n&#x27;est pas « presque bon » : il est non conforme. Les règles ont changé en novembre 2025 avec la version 2.3, et la version 2.4 entre en vigueur le 14 novembre 2026.</p>
+<p>Voici quatre non-conformités que le générateur d&#x27;AdminCH contrôle avant d&#x27;écrire quoi que ce soit. Chacune est traçable à une règle de la spécification, référencée dans le fichier des sources livré avec le pack.</p>
+<h2>1. L&#x27;adresse de type combiné, abandonnée</h2>
+<p><strong>Le symptôme</strong> : la facture est produite par un modèle qui fonctionnait avant, et plus rien n&#x27;indique un problème à l&#x27;écran.</p>
+<p><strong>La cause</strong> : depuis la version 2.3 de la spécification, en vigueur depuis le 21 novembre 2025, seule l&#x27;adresse structurée est admise. Rue, numéro, numéro postal, localité et pays occupent des champs distincts. Le type combiné, qui laissait deux lignes d&#x27;adresse libres, est supprimé. Les modèles antérieurs le produisent encore.</p>
+<p><strong>Ce que fait AdminCH</strong> : le générateur n&#x27;offre pas d&#x27;autre choix. L&#x27;adresse est un objet à champs séparés et le payload émet toujours le marqueur d&#x27;adresse structurée ; les champs obligatoires et le code pays à deux lettres sont contrôlés avant l&#x27;écriture.</p>
+<h2>2. La référence qui ne va pas avec l&#x27;IBAN</h2>
+<p><strong>Le symptôme</strong> : la facture est refusée à la lecture, ou le paiement reçu ne se rapproche d&#x27;aucune facture.</p>
+<p><strong>La cause</strong> : le type de référence dépend du compte. Un QR-IBAN — reconnaissable à son QR-IID, les chiffres 5 à 9 compris entre 30000 et 31999 — impose une référence QR. Un IBAN classique admet une Creditor Reference ISO 11649 ou aucune référence, jamais une référence QR. Toute autre combinaison est invalide selon la spécification.</p>
+<p><strong>Ce que fait AdminCH</strong> : la combinaison est vérifiée dans les deux sens, et le message nomme le conflit exact — par exemple qu&#x27;une référence QR exige un QR-IBAN. Rien n&#x27;est écrit tant que le conflit subsiste, et rien n&#x27;est arbitré à votre place : le pack ne devine pas quel compte vous vouliez utiliser.</p>
+<h2>3. La clé de contrôle de la référence</h2>
+<p><strong>Le symptôme</strong> : une référence recopiée à la main, ou reprise d&#x27;un ancien numéro de bulletin, qui a la bonne allure mais n&#x27;est pas acceptée.</p>
+<p><strong>La cause</strong> : une référence QR fait 27 chiffres dont le dernier est une clé calculée par un modulo 10 récursif décrit en annexe de la spécification. Une Creditor Reference suit la norme ISO 11649 : préfixe RF et clé modulo 97-10. Un chiffre inversé change la clé.</p>
+<p><strong>Ce que fait AdminCH</strong> : les deux clés sont recalculées et comparées. Le pack construit aussi la référence à partir de votre numéro interne, et rejoue les vecteurs de test publiés dans la spécification.</p>
+<h2>4. Le jeu de caractères et les longueurs</h2>
+<p><strong>Le symptôme</strong> : un tiret long copié depuis un traitement de texte, ou un message un peu long : à la relecture humaine, rien ne cloche.</p>
+<p><strong>La cause</strong> : le Swiss QR Code n&#x27;admet qu&#x27;un jeu de caractères défini. Chaque champ a sa longueur maximale, et surtout le message libre et les informations de facture structurées partagent une limite commune de 140 caractères — pas 140 chacun.</p>
+<p><strong>Ce que fait AdminCH</strong> : les caractères hors jeu admis sont listés un par un, avec le champ concerné ; les longueurs de champ, la limite commune de 140 caractères et la taille totale du payload sont vérifiées.</p>
+<h2>Ce qu&#x27;AdminCH ne fait pas</h2>
+<ul>
+<li>Il n&#x27;imprime pas la facture complète : il produit le QR code aux bonnes dimensions et le récapitulatif des valeurs mises en forme. L&#x27;insertion dans votre modèle, avec le récépissé et la section paiement, reste de votre côté.</li>
+<li>Il ne remplace pas un conseil fiscal : c&#x27;est un outil de calcul et un référentiel documentaire, pas une fiduciaire ni une administration.</li>
+<li>Il ne se met pas à jour : aucune connexion réseau, aucun abonnement, aucun support. L&#x27;édition 2026 est livrée telle quelle.</li>
+<li>Il ne corrige rien en silence : quand une donnée est non conforme, elle est énumérée et rien n&#x27;est écrit.</li>
+</ul>
+<h2>Prix</h2>
+<p>290 CHF, un seul paiement, licence perpétuelle avec usage commercial autorisé. Le pack comprend les programmes, les référentiels de données, le guide écrit, les quatre skills pour Claude Code et le fichier des sources daté. Remboursement sous 14 jours.</p>
+<p>AdminCH est développé par Olivier, à Neuchâtel, en Suisse, avec l&#x27;aide d&#x27;une intelligence artificielle pour l&#x27;écriture du code et de la documentation. Pour une question, écrivez-nous : nous répondons sous 2 jours ouvrables.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap prose">
+      <h2>En savoir plus sur AdminCH</h2>
+      <p><a href="index.html">Fonctionnalités, aspects techniques et prix de AdminCH</a></p>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

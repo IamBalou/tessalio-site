@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loyers impayés et rappels : suivre chaque mensualité sans relire ses onglets — LocatifPro</title>
+<meta name="description" content="Statuts PAYE, PARTIEL, IMPAYE et tableau de bord des retards : ce que LocatifPro fait pour le suivi des loyers impayés, et ce qu&#x27;il ne fait pas.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Loyers impayés et rappels : suivre chaque mensualité sans relire ses onglets — LocatifPro">
+<meta property="og:description" content="Statuts PAYE, PARTIEL, IMPAYE et tableau de bord des retards : ce que LocatifPro fait pour le suivi des loyers impayés, et ce qu&#x27;il ne fait pas.">
+<link rel="canonical" href="https://tessalio.ch/locatifpro/loyers-impayes-rappels.html">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">LocatifPro</span></div>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#prix">Prix</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap prose">
+<h1>Loyers impayés et rappels : suivre chaque mensualité sans relire ses onglets</h1>
+<p>Le 5 du mois, la question est la même : qui a payé, qui n&#x27;a versé qu&#x27;une partie, et depuis quand. Avec les loyers dans un classeur Excel, il faut ouvrir plusieurs onglets et comparer des colonnes de montants ; un retard se remarque souvent avec un mois de décalage.</p>
+<p>Le recouvrement d&#x27;un loyer en retard relève du droit du bail : les conditions d&#x27;une mise en demeure, sa forme et les délais sont fixés par le Code des obligations et par votre contrat. Un logiciel ne remplace ni ce texte ni un conseil juridique : sur un cas concret, relisez votre bail et adressez-vous à une association professionnelle (ASLOCA, USPI, chambre immobilière) ou à un juriste.</p>
+<p>LocatifPro s&#x27;adresse aux petites régies suisses de 2 à 10 personnes et aux propriétaires de plusieurs appartements ; il s&#x27;utilise dans le navigateur, sur http://127.0.0.1:8080, sans abonnement.</p>
+<h2>Le problème, tel qu&#x27;il se pose en fin de mois</h2>
+<ul>
+<li>Repérer un loyer impayé ou partiel demande de relire ligne à ligne plusieurs onglets.</li>
+<li>Un versement incomplet passe facilement pour un paiement complet.</li>
+<li>Le montant encore dû sur l&#x27;ensemble du parc n&#x27;est calculé nulle part.</li>
+</ul>
+<h2>Ce que fait LocatifPro, point par point</h2>
+<ul>
+<li><strong>Une mensualité, un statut</strong> — chaque paiement porte l&#x27;un des quatre statuts EN_ATTENTE, PAYE, PARTIEL ou IMPAYE. À la création d&#x27;un bail, les 12 mensualités suivantes sont générées en EN_ATTENTE, le montant dû valant loyer plus charges.</li>
+<li><strong>Régularisation d&#x27;un paiement</strong> — l&#x27;écran de modification enregistre le montant reçu, la date, le statut et une note. Un rôle « lecture » consulte ; seul un administrateur modifie.</li>
+<li><strong>Tableau de bord des retards</strong> — la page d&#x27;accueil liste les paiements IMPAYE ou PARTIEL rattachés à un bail actif : locataire, bien, mois concerné et montant restant, soit la différence entre le dû et le reçu. Quatre compteurs donnent les baux actifs, le nombre de loyers impayés, le total en CHF encore dû et les baux échéant dans les 90 jours. Chaque alerte mène au formulaire de régularisation.</li>
+<li><strong>Historique par bail</strong> — la fiche du bail affiche toutes ses mensualités : dû, reçu, date et statut.</li>
+<li><strong>Décompte annuel en PDF</strong> — mois par mois le dû, le reçu, la date et le statut, puis le solde de l&#x27;année s&#x27;il reste un montant ouvert.</li>
+<li><strong>Export pour la fiduciaire</strong> — le récapitulatif fiscal de l&#x27;année, en CSV et en PDF, donne par bien les loyers perçus, le total impayé et le nombre de paiements.</li>
+</ul>
+<p>Les données restent dans un fichier SQLite (db/locatifpro.db) sur votre poste, sans télémétrie ni service externe. Tableau de bord et régularisation des paiements font partie des 138 tests automatisés livrés avec l&#x27;application.</p>
+<h2>Ce que LocatifPro ne fait pas</h2>
+<p>La version 1.0 suit les impayés, elle ne les relance pas à votre place.</p>
+<ul>
+<li>Elle n&#x27;édite <strong>aucune lettre de rappel</strong>, aucune sommation ni mise en demeure : le mot « rappel » désigne ici l&#x27;alerte affichée à l&#x27;écran, rien d&#x27;autre.</li>
+<li>Elle <strong>n&#x27;envoie ni e-mail ni courrier</strong>, ni au locataire ni à vous : aucune notification ne sort de l&#x27;application.</li>
+<li>Elle ne calcule pas d&#x27;intérêts de retard et ne prépare aucune pièce pour un office des poursuites.</li>
+<li>Elle ne se connecte à aucune banque : les versements ne sont pas rapprochés automatiquement, chaque encaissement se saisit.</li>
+</ul>
+<h2>Les limites de la version 1.0</h2>
+<ul>
+<li>La page « Paiements » affiche les 100 derniers enregistrements, sans filtre par statut : le tri par retard se fait depuis le tableau de bord.</li>
+<li>Les mensualités sont générées par blocs de 12 mois à la création du bail ; au-delà, la suite se saisit à la main.</li>
+<li>L&#x27;application démarre sur 127.0.0.1 ; l&#x27;accès depuis d&#x27;autres postes du réseau local demande une configuration de votre part.</li>
+</ul>
+<h2>Prix</h2>
+<p>La licence perpétuelle pour 1 à 5 utilisateurs est à 8 000 CHF : installateur, guide utilisateur, jeu de démonstration, support par e-mail pendant 30 jours et remboursement sous 14 jours selon les conditions générales. La maintenance annuelle, optionnelle, est à 1 500 CHF.</p>
+<h2>Voir LocatifPro avant de décider</h2>
+<p>Une démonstration d&#x27;environ cinq minutes parcourt le tableau de bord et la régularisation d&#x27;un paiement, sur des données fictives.</p>
+<p>LocatifPro est développé par Olivier, à Neuchâtel, avec l&#x27;aide d&#x27;une intelligence artificielle pour le code et la documentation. <a href="index.html">Fonctionnalités, aspects techniques et prix</a> : pour une question ou un devis, écrivez-nous depuis la <a href="index.html#contact">page de contact</a> — nous répondons sous 2 jours ouvrables.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap prose">
+      <h2>En savoir plus sur LocatifPro</h2>
+      <p><a href="index.html">Fonctionnalités, aspects techniques et prix de LocatifPro</a></p>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

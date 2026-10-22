@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Décompte annuel des loyers et indexation IPC : deux dossiers de début d'année — LocatifPro</title>
+<meta name="description" content="Décompte annuel en PDF depuis la fiche du bail et calcul indicatif d&#x27;indexation IPC : ce que fait LocatifPro, logiciel de gestion locative local.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Décompte annuel des loyers et indexation IPC : deux dossiers de début d&#x27;année — LocatifPro">
+<meta property="og:description" content="Décompte annuel en PDF depuis la fiche du bail et calcul indicatif d&#x27;indexation IPC : ce que fait LocatifPro, logiciel de gestion locative local.">
+<link rel="canonical" href="https://tessalio.ch/locatifpro/decompte-charges-indexation-ipc.html">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">LocatifPro</span></div>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#prix">Prix</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap prose">
+<h1>Décompte annuel des loyers et indexation IPC : deux dossiers de début d&#x27;année en gestion locative</h1>
+<p>Chaque début d&#x27;année ramène les deux mêmes demandes. Un locataire réclame le récapitulatif de ce qu&#x27;il a versé l&#x27;année écoulée. Et, sur un bail indexé, revient la question de l&#x27;adaptation du loyer à l&#x27;indice suisse des prix à la consommation. Les deux se préparent souvent à la main, à partir d&#x27;un tableur.</p>
+<p>Ces sujets relèvent du droit du bail : les conditions d&#x27;une adaptation indexée, la forme de la notification et les délais figurent dans le Code des obligations (art. 269d) et dans l&#x27;OBLF. Les indices de l&#x27;Office fédéral de la statistique (OFS) sont à consulter à la source et peuvent être révisés ; sur un cas concret, faites relire votre courrier par un juriste. Un logiciel ne remplace ni le texte de loi ni la publication officielle : il prépare le calcul.</p>
+<p>LocatifPro s&#x27;adresse aux petites régies suisses de 2 à 10 personnes et aux propriétaires privés de plusieurs appartements. L&#x27;application s&#x27;utilise dans le navigateur, sur http://127.0.0.1:8080, sans abonnement.</p>
+<h2>Le problème, tel qu&#x27;il se pose au quotidien</h2>
+<ul>
+<li>Les loyers, cautions et échéances vivent dans des classeurs Excel recopiés d&#x27;un poste à l&#x27;autre.</li>
+<li>Repérer un loyer impayé ou partiel demande de relire plusieurs onglets en fin de mois.</li>
+<li>Les quittances et les décomptes annuels sont retapés à la main dans un traitement de texte.</li>
+<li>Le calcul d&#x27;indexation se refait à la calculette, avec des indices à retrouver chaque fois.</li>
+</ul>
+<h2>Ce que fait LocatifPro, point par point</h2>
+<ul>
+<li><strong>Décompte annuel des loyers en PDF</strong> — depuis la fiche d&#x27;un bail, un lien ouvre le décompte annuel des loyers, au format A4, généré à la demande, sans fichier stocké.</li>
+<li><strong>Quittance de loyer en PDF</strong> — depuis la liste des paiements, le lien « Quittance PDF » ouvre celle du mois choisi.</li>
+<li><strong>Calcul d&#x27;indexation IPC</strong> — la page « IPC » prend le loyer actuel, l&#x27;année de référence du bail et l&#x27;année de calcul, puis affiche les deux indices OFS, la variation en pourcent, le loyer indexé et l&#x27;écart mensuel en CHF. Le calcul ne modifie aucun loyer enregistré : le montant est indicatif, la décision restant soumise au droit du bail.</li>
+<li><strong>Baux et mensualités générées</strong> — à la création d&#x27;un bail (dates, loyer, charges, caution), les 12 mensualités suivantes sont créées au statut EN_ATTENTE.</li>
+<li><strong>Suivi des paiements</strong> — chaque mensualité passe en PAYE, PARTIEL ou IMPAYE avec le montant reçu, la date et une note ; cet historique alimente le décompte annuel.</li>
+<li><strong>Tableau de bord et alertes</strong> — impayés et paiements partiels des baux actifs, baux échéant dans les 90 jours et total des montants dus.</li>
+<li><strong>Export CSV pour la fiduciaire</strong> — récapitulatif fiscal de l&#x27;année (loyers perçus, impayés et paiements par bien), en point-virgule et UTF-8 ; il existe aussi en PDF.</li>
+</ul>
+<p>Les données sont écrites dans un fichier SQLite (db/locatifpro.db) sur votre poste, sans télémétrie ni service externe appelé.</p>
+<h2>Les limites de la version 1.0</h2>
+<ul>
+<li>Le décompte annuel reprend les loyers du bail tels qu&#x27;enregistrés. La version 1.0 ne répartit pas les frais accessoires effectifs — chauffage, eau chaude, conciergerie — entre locataires d&#x27;un immeuble.</li>
+<li>Le calcul d&#x27;indexation s&#x27;appuie sur une table d&#x27;indices OFS intégrée couvrant les années 2015 à 2025 ; hors de cette plage, il ne s&#x27;applique pas.</li>
+<li>LocatifPro n&#x27;édite aucune formule officielle de notification et n&#x27;envoie ni courrier ni e-mail : les alertes s&#x27;affichent à l&#x27;écran.</li>
+<li>Pas d&#x27;import Excel : biens, locataires et baux se saisissent dans les formulaires.</li>
+<li>L&#x27;application démarre sur 127.0.0.1 ; un accès depuis d&#x27;autres postes du réseau local demande une configuration de votre part.</li>
+</ul>
+<h2>Prix</h2>
+<p>La licence perpétuelle pour 1 à 5 utilisateurs est à 8 000 CHF. Elle comprend l&#x27;installateur, le script de lancement, le guide utilisateur, le jeu de démonstration, le support par e-mail pendant 30 jours et le remboursement sous 14 jours selon les conditions générales. La maintenance annuelle, optionnelle, est à 1 500 CHF.</p>
+<h2>Voir LocatifPro avant de décider</h2>
+<p>Une démonstration d&#x27;environ cinq minutes parcourt le tableau de bord, une fiche de bien et la régularisation d&#x27;un paiement sur des données fictives ; le décompte annuel et la page IPC s&#x27;y voient sur des baux d&#x27;exemple.</p>
+<p>LocatifPro est développé par Olivier, à Neuchâtel, en Suisse, avec l&#x27;aide d&#x27;une intelligence artificielle pour l&#x27;écriture du code et de la documentation. <a href="index.html">Fonctionnalités, aspects techniques et prix</a> : pour une question ou un devis, écrivez-nous depuis la <a href="index.html#contact">page de contact</a> — nous répondons sous 2 jours ouvrables.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap prose">
+      <h2>En savoir plus sur LocatifPro</h2>
+      <p><a href="index.html">Fonctionnalités, aspects techniques et prix de LocatifPro</a></p>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recontrôles OIBT : ne plus rater une échéance — CtrlElec</title>
+<meta name="description" content="Périodicités, relances et rapports de sécurité : comment CtrlElec, logiciel local pour contrôleurs OIBT indépendants, tient le registre des échéances.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Recontrôles OIBT : ne plus rater une échéance — CtrlElec">
+<meta property="og:description" content="Périodicités, relances et rapports de sécurité : comment CtrlElec, logiciel local pour contrôleurs OIBT indépendants, tient le registre des échéances.">
+<link rel="canonical" href="https://tessalio.ch/ctrlelec/recontroles-oibt-echeances.html">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">CtrlElec</span></div>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#prix">Prix</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap prose">
+<h1>Recontrôles périodiques OIBT : ne plus rater une échéance</h1>
+<p>Un contrôleur indépendant suit des installations dont le prochain contrôle tombera dans 1, 5, 10 ou 20 ans. D’ici là, il faut encore savoir quel bien est concerné, qui en est le propriétaire et quand a eu lieu le dernier contrôle. Les périodicités de contrôle sont fixées par l’OIBT et dépendent du type d’installation ; un logiciel ne se substitue ni à l’ordonnance ni à l’ESTI. Il peut en revanche tenir le registre à votre place.</p>
+<p>CtrlElec s’adresse aux contrôleurs OIBT indépendants et aux petites entreprises de contrôle (1 à 5 contrôleurs) actives en Suisse. L’application s’installe sur un poste Windows et s’utilise dans le navigateur, sans compte en ligne.</p>
+<h2>Le problème, tel qu’il se pose au quotidien</h2>
+<ul>
+<li>Le portefeuille d’installations vit dans un classeur Excel : retrouver le bien à recontrôler dans 5, 10 ou 20 ans dépend d’un fichier et de la mémoire de chacun.</li>
+<li>Le rapport de sécurité est retapé sous Word à chaque contrôle, sans structure imposée ni reprise des mesures déjà saisies.</li>
+<li>Les mesures et les défauts sont notés sur papier pendant le contrôle, puis ressaisis le soir dans un autre outil.</li>
+<li>La facture est établie ailleurs, sans lien avec le contrôle ni avec la référence de paiement.</li>
+</ul>
+<h2>Ce que fait CtrlElec, point par point</h2>
+<ul>
+<li><strong>Fichier clients</strong> — fiches par type (particulier, régie, entreprise) avec adresse, NPA, ville, e-mail et téléphone, vérifiés à la saisie côté serveur.</li>
+<li><strong>Registre des installations</strong> — chaque installation est rattachée à un client, avec adresse propre, affectation, périodicité de 1, 5, 10 ou 20 ans, gestionnaire de réseau et numéro de compteur.</li>
+<li><strong>Fiche de contrôle et mesures</strong> — type (périodique, initial, réception, sporadique), date, coût, et mesures Riso, boucle de défaut, PE, FI/RCD et disjoncteur avec point de mesure, valeur et unité.</li>
+<li><strong>Relevé des défauts</strong> — code, description et gravité (mineur, majeur, dangereux), repris ensuite dans le rapport.</li>
+<li><strong>Rapport de sécurité RaSi en PDF</strong> — un document structuré selon l’art. 37 OIBT en quatre sections : emplacement, description de l’installation, normes appliquées, résultats des mesures et des défauts. Le champ « normes appliquées » est pré-rempli avec NIBT 2020, OIBT, et reste modifiable.</li>
+<li><strong>Facture avec section de paiement QR</strong> — créée depuis le contrôle, avec un numéro F-AAAA-NNNN, une référence de paiement et un code QR reprenant IBAN, montant et référence.</li>
+<li><strong>Calcul de la prochaine échéance</strong> — dès qu’un contrôle passe au statut remis, la date du dernier contrôle et la prochaine échéance de l’installation sont recalculées selon la périodicité enregistrée.</li>
+<li><strong>Registre des relances</strong> — la liste des installations dont l’échéance tombe dans 90, 180 ou 365 jours, triée par date, avec les jours restants ou de retard et les coordonnées du propriétaire.</li>
+<li><strong>Tableau de bord</strong> — contrôles du mois, montant facturé, factures émises non encore payées, installations en retard, compteurs d’échéances et huit derniers contrôles.</li>
+</ul>
+<p>Les données sont écrites dans un fichier SQLite (ctrlelec.db) sur votre machine, le serveur n’écoute que sur 127.0.0.1 et le code ne contient aucun appel vers un service externe. Pour sauvegarder, il suffit de copier ce fichier. La version 1.0 est couverte par 134 tests automatisés (pytest).</p>
+<h2>Les limites de la version 1.0</h2>
+<p>Autant les annoncer avant l’achat :</p>
+<ul>
+<li>Pas d’import Excel : la reprise du portefeuille existant se fait par saisie des clients et des installations, avec leur dernière date de contrôle.</li>
+<li>L’application est prévue pour un poste et n’est pas exposée sur le réseau par défaut. Les comptes (rôle admin ou contrôleur) se gèrent depuis un écran d’administration réservé au rôle admin : création, nom, rôle, mot de passe et désactivation.</li>
+<li>L’IBAN et les coordonnées du créancier livrés sont ceux du jeu de démonstration : ils doivent être remplacés par les vôtres, et un essai auprès de votre banque est recommandé avant le premier envoi à un client.</li>
+<li>CtrlElec ne remplace pas le contrôleur agréé : la vérification du contenu du rapport et sa signature relèvent de votre responsabilité, et son acceptation dépend du destinataire (propriétaire, gestionnaire de réseau).</li>
+</ul>
+<h2>Prix</h2>
+<p>La licence perpétuelle pour 1 à 3 contrôleurs est à 11 800 CHF TTC. Elle comprend l’application complète et son code source Python (FastAPI, SQLAlchemy, SQLite), l’installateur Windows et le script de démarrage, le guide utilisateur, la documentation d’architecture et un jeu de données fictives. Le remboursement dans les 14 jours suit les conditions de licence.</p>
+<p>La maintenance annuelle est optionnelle, à 1 800 CHF TTC : mises à jour et support par e-mail pendant 12 mois.</p>
+<h2>Voir CtrlElec avant de décider</h2>
+<p>L’application est livrée avec un jeu de données fictives et un script de démonstration d’environ quatre minutes : tableau de bord, création d’un contrôle avec mesures et défauts, rapport RaSi, facture, remise du contrôle et recalcul de l’échéance, puis registre des relances.</p>
+<p>CtrlElec est développé par Olivier, à Neuchâtel, en Suisse, avec l’aide d’une intelligence artificielle pour l’écriture du code et de la documentation. Pour une question, une démonstration ou un devis, écrivez-nous : nous répondons sous 2 jours ouvrables.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap prose">
+      <h2>En savoir plus sur CtrlElec</h2>
+      <p><a href="index.html">Fonctionnalités, aspects techniques et prix de CtrlElec</a></p>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

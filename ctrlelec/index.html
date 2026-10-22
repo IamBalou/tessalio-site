@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CtrlElec — Contrôles OIBT, rapports RaSi et échéances de recontrôle sur votre poste</title>
+<meta name="description" content="Logiciel local pour contrôleurs OIBT : clients, installations, mesures, rapport de sécurité PDF, facture avec code QR et registre des échéances.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="CtrlElec — Contrôles OIBT, rapports RaSi et échéances de recontrôle sur votre poste">
+<meta property="og:description" content="Logiciel local pour contrôleurs OIBT : clients, installations, mesures, rapport de sécurité PDF, facture avec code QR et registre des échéances.">
+<link rel="canonical" href="https://tessalio.ch/ctrlelec/index.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CtrlElec",
+  "description": "Logiciel local pour contrôleurs OIBT : clients, installations, mesures, rapport de sécurité PDF, facture avec code QR et registre des échéances.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows",
+  "softwareVersion": "1.0",
+  "offers": {
+    "@type": "Offer",
+    "price": "11800",
+    "priceCurrency": "CHF"
+  },
+  "url": "https://tessalio.ch/ctrlelec/"
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">CtrlElec</span></div>
+    <nav class="site-nav">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#prix">Prix</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>CtrlElec</h1>
+      <p class="tagline">Contrôles OIBT, rapports RaSi et échéances de recontrôle sur votre poste</p>
+      <p class="cible">Pour les contrôleurs OIBT indépendants et les petites entreprises de contrôle (1 à 5 contrôleurs) actives en Suisse. L'application s'installe sur un poste Windows et s'utilise dans le navigateur, sans compte en ligne.</p>
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="#prix">Voir les prix</a>
+        <a class="btn btn-ghost" href="#contact">Demander une démo</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="probleme" class="section">
+    <div class="wrap">
+      <h2>Le problème</h2>
+      <ul class="puces">
+        <li>Le portefeuille d'installations vit dans un classeur Excel : retrouver le bien à recontrôler dans 5, 10 ou 20 ans dépend d'un fichier et de la mémoire de chacun.</li>
+        <li>Le rapport de sécurité est retapé sous Word à chaque contrôle, sans structure imposée ni reprise des mesures déjà saisies.</li>
+        <li>Les mesures et les défauts sont notés sur papier pendant le contrôle, puis ressaisis le soir dans un autre outil.</li>
+        <li>La facture est établie ailleurs, sans lien avec le contrôle ni avec la référence de paiement.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="fonctionnalites" class="section section-alt">
+    <div class="wrap">
+      <h2>Ce que fait le logiciel</h2>
+      <p class="lead">CtrlElec réunit sur un seul poste les clients, les installations, les fiches de contrôle avec mesures et défauts, le rapport de sécurité PDF, la facture avec section de paiement QR et le registre des échéances. Les données sont écrites dans un fichier SQLite sur votre machine et le serveur n'écoute que sur 127.0.0.1. La prochaine échéance de chaque installation est recalculée dès qu'un contrôle est marqué remis.</p>
+      <div class="grille">
+        <article class="fonction">
+          <h3>Fichier clients</h3>
+          <p>Fiches clients par type (particulier, régie, entreprise) avec adresse, NPA, ville, e-mail et téléphone, vérifiés à la saisie côté serveur.</p>
+        </article>
+        <article class="fonction">
+          <h3>Registre des installations</h3>
+          <p>Chaque installation est rattachée à un client avec son adresse propre, son affectation, sa périodicité de 1, 5, 10 ou 20 ans, son gestionnaire de réseau et son numéro de compteur.</p>
+        </article>
+        <article class="fonction">
+          <h3>Fiche de contrôle et mesures</h3>
+          <p>Le contrôle enregistre son type (périodique, initial, réception, sporadique), sa date, son coût et ses mesures Riso, boucle de défaut, PE, FI/RCD et disjoncteur, avec point de mesure, valeur, unité et marqueur oui/non.</p>
+        </article>
+        <article class="fonction">
+          <h3>Relevé des défauts</h3>
+          <p>Les défauts constatés sont saisis avec un code, une description et une gravité (mineur, majeur, dangereux), puis repris dans le rapport.</p>
+        </article>
+        <article class="fonction">
+          <h3>Rapport de sécurité RaSi en PDF</h3>
+          <p>Génération d'un PDF structuré selon l'art. 37 OIBT en quatre sections : emplacement, description de l'installation, normes appliquées, résultats des mesures et des défauts.</p>
+        </article>
+        <article class="fonction">
+          <h3>Facture avec section de paiement QR</h3>
+          <p>La facture se crée depuis le contrôle, reçoit un numéro F-AAAA-NNNN et une référence de paiement, et sort en PDF avec un code QR dont le contenu est composé selon les Implementation Guidelines QR-facture (IBAN, montant, référence) ; si les données ne sont pas conformes, le code n'est pas généré et la facture l'indique. Coordonnées de démonstration à remplacer par les vôtres ; bordereau détachable non imprimé.</p>
+        </article>
+        <article class="fonction">
+          <h3>Calcul de la prochaine échéance</h3>
+          <p>Quand un contrôle passe au statut remis, la date du dernier contrôle et la prochaine échéance de l'installation sont recalculées selon la périodicité enregistrée.</p>
+        </article>
+        <article class="fonction">
+          <h3>Registre des relances</h3>
+          <p>Liste des installations dont l'échéance tombe dans 90, 180 ou 365 jours, triée par date, avec le nombre de jours restants ou de retard et les coordonnées du propriétaire.</p>
+        </article>
+        <article class="fonction">
+          <h3>Gestion des comptes utilisateurs</h3>
+          <p>Un écran réservé au rôle admin liste les comptes et permet d'en créer, de modifier le nom, le rôle et le mot de passe, et de désactiver un compte sans le supprimer (les contrôles enregistrés y font référence).</p>
+        </article>
+        <article class="fonction">
+          <h3>Tableau de bord</h3>
+          <p>Contrôles du mois, montant facturé du mois, montant des factures émises non encore payées, installations en retard, compteurs d'échéances à 90, 180 et 365 jours et huit derniers contrôles.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="suisse" class="section">
+    <div class="wrap">
+      <h2>Spécifique à la Suisse</h2>
+      <ul class="puces">
+        <li>Périodicités de contrôle de 1, 5, 10 ou 20 ans selon l'affectation, dans l'esprit de l'art. 36 OIBT.</li>
+        <li>Rapport de sécurité PDF structuré selon les rubriques de l'art. 37 OIBT ; le contenu, sa vérification et sa signature restent de la responsabilité du contrôleur agréé.</li>
+        <li>Champ « normes appliquées » par contrôle, pré-rempli avec NIBT 2020, OIBT et modifiable.</li>
+        <li>Champ gestionnaire de réseau sur chaque installation (Romande Energie, Groupe E, SIG, EWZ, etc.).</li>
+        <li>Facture en francs suisses avec code QR de paiement composé selon les Implementation Guidelines QR-facture (IBAN, montant, référence), non généré si les données ne sont pas conformes ; bordereau détachable non imprimé.</li>
+        <li>Interface, documents PDF et documentation en français.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="securite" class="section section-alt">
+    <div class="wrap">
+      <h2>Technique et sécurité</h2>
+      <dl class="tech">
+        <dt>Installation</dt><dd>Copier le dossier sur le poste, lancer installer.bat (vérification de Python, installation des dépendances, chargement du jeu de démonstration), puis lancer.bat et ouvrir http://127.0.0.1:8000 dans un navigateur.</dd>
+        <dt>Prérequis</dt><dd>Windows 10/11, Python 3.10 ou plus récent (3.12 recommandé), un navigateur web</dd>
+        <dt>Données locales</dt><dd>SQLite local (fichier ctrlelec.db), serveur limité à 127.0.0.1, aucune télémétrie ni appel réseau sortant dans le code ; mots de passe hachés avec bcrypt et session par cookie signé</dd>
+        <dt>Tests</dt><dd>134 tests automatisés (pytest)</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="prix" class="section">
+    <div class="wrap">
+      <h2>Prix</h2>
+      <div class="prix-cartes">
+        <div class="carte carte-principale">
+          <h3>Licence</h3>
+          <p class="montant">11 800 CHF</p>
+          <p class="libelle">Licence perpétuelle, 1 à 3 contrôleurs</p>
+          <ul class="puces">
+            <li>Application complète et code source Python (FastAPI, SQLAlchemy, SQLite)</li>
+            <li>Installateur Windows (installer.bat) et script de démarrage (lancer.bat)</li>
+            <li>Guide utilisateur, documentation d'architecture et script de démonstration</li>
+            <li>Jeu de données fictives pour la prise en main</li>
+            <li>Remboursement dans les 14 jours selon les conditions de licence</li>
+          </ul>
+          <p><a class="btn btn-primary" href="#contact">Demander une démo</a></p>
+        </div>
+        <div class="carte">
+          <h3>Maintenance annuelle</h3>
+          <p class="montant">1 800 CHF</p>
+          <p class="libelle">Maintenance annuelle optionnelle : mises à jour + support e-mail 12 mois</p>
+          <ul class="puces">
+            <li>Optionnelle, renouvelable chaque année.</li>
+            <li>Mises à jour et correctifs de sécurité.</li>
+            <li>Support par e-mail pendant 12 mois.</li>
+          </ul>
+          <p><a class="btn btn-ghost" href="#contact">Demander une démo</a></p>
+        </div>
+      </div>
+      <p class="mention-paiement">Paiement sécurisé via Lemon Squeezy, facture avec la TVA de votre pays, remboursement 14 jours.</p>
+    </div>
+  </section>
+
+  <section id="faq" class="section section-alt">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Où sont stockées les données de mes clients ?</summary>
+        <p>Dans un fichier SQLite (ctrlelec.db) sur votre poste. Le serveur n'écoute que sur 127.0.0.1 et le code ne contient aucun appel vers un service externe. Pour sauvegarder, il suffit de copier ce fichier sur le support de votre choix.</p>
+      </details>
+      <details>
+        <summary>Le rapport de sécurité généré peut-il être remis tel quel ?</summary>
+        <p>Le PDF reprend les quatre rubriques de l'art. 37 OIBT ainsi que les mesures et défauts saisis. CtrlElec ne remplace pas le contrôleur agréé : la vérification du contenu et la signature du rapport relèvent de votre responsabilité, et son acceptation dépend du destinataire (propriétaire, gestionnaire de réseau).</p>
+      </details>
+      <details>
+        <summary>La facture avec code QR est-elle utilisable directement ?</summary>
+        <p>Le PDF contient un code QR dont le contenu est composé selon les Implementation Guidelines QR-facture (IBAN, montant, référence) ; si les données ne sont pas conformes, le code n'est pas généré et la facture l'indique. Le bordereau détachable n'est pas imprimé. L'IBAN et les coordonnées du créancier livrés sont ceux du jeu de démonstration : ils doivent être remplacés par les vôtres, et un exemplaire contrôlé par votre banque avant le premier envoi à un client.</p>
+      </details>
+      <details>
+        <summary>Peut-on travailler à plusieurs contrôleurs ?</summary>
+        <p>Le logiciel gère plusieurs comptes avec un rôle admin ou contrôleur, et chaque contrôle est rattaché au contrôleur connecté. Un écran d'administration réservé au rôle admin permet de créer les comptes, de modifier leur nom, leur rôle et leur mot de passe, et de les désactiver. L'application est prévue pour un poste, non exposée sur le réseau par défaut.</p>
+      </details>
+      <details>
+        <summary>Puis-je reprendre mon portefeuille Excel existant ?</summary>
+        <p>La version 1.0 ne comporte pas d'import Excel : la reprise se fait par saisie des clients et des installations dans l'application, avec leur dernière date de contrôle.</p>
+      </details>
+      <details>
+        <summary>Comment se déroule une démonstration ?</summary>
+        <p>L'application est livrée avec un jeu de données fictives et un script de démonstration d'environ quatre minutes qui parcourt le cycle complet : connexion, tableau de bord, création d'un contrôle avec mesures et défauts, rapport RaSi, facture, remise du contrôle et recalcul de l'échéance, puis registre des relances.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="guides" class="section">
+    <div class="wrap">
+      <h2>Guides</h2>
+      <ul class="puces">
+          <li><a href="rapport-securite-protocole-mesure.html">Rapport de sécurité RaSi : un PDF structuré sans ressaisie</a></li>
+          <li><a href="recontroles-oibt-echeances.html">Recontrôles OIBT : ne plus rater une échéance</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

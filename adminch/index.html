@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AdminCH — L'administration suisse d'un indépendant, avec la source de chaque chiffre</title>
+<meta name="description" content="Pack pour indépendants et PME suisses : QR-facture conforme, TVA, charges sociales 2026, délais des 26 cantons. Chaque valeur sourcée et datée.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="AdminCH — L&#x27;administration suisse d&#x27;un indépendant, avec la source de chaque chiffre">
+<meta property="og:description" content="Pack pour indépendants et PME suisses : QR-facture conforme, TVA, charges sociales 2026, délais des 26 cantons. Chaque valeur sourcée et datée.">
+<link rel="canonical" href="https://tessalio.ch/adminch/index.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AdminCH",
+  "description": "Pack pour indépendants et PME suisses : QR-facture conforme, TVA, charges sociales 2026, délais des 26 cantons. Chaque valeur sourcée et datée.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows",
+  "softwareVersion": "1.0",
+  "offers": {
+    "@type": "Offer",
+    "price": "290",
+    "priceCurrency": "CHF"
+  },
+  "url": "https://tessalio.ch/adminch/"
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">AdminCH</span></div>
+    <nav class="site-nav">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#prix">Prix</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>AdminCH</h1>
+      <p class="tagline">L'administration suisse d'un indépendant, avec la source de chaque chiffre</p>
+      <p class="cible">Pour l'indépendant, la petite PME ou la fiduciaire de Suisse romande qui gère son administration seul et veut des chiffres exacts plutôt que des articles de blog. Fonctionne sur Windows, macOS et Linux, en ligne de commande, comme bibliothèque Python ou depuis Claude Code.</p>
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="#prix">Voir les prix</a>
+        <a class="btn btn-ghost" href="cgv.html">Lire la licence</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="probleme" class="section">
+    <div class="wrap">
+      <h2>Le problème</h2>
+      <ul class="puces">
+        <li>Les règles de la QR-facture ont changé en novembre 2025 : les modèles de facture d'avant produisent une adresse non conforme, et les paiements sont rejetés.</li>
+        <li>Les taux, seuils et délais suisses sont dispersés entre l'AFC, l'OFAS, SIX et 26 administrations cantonales, et changent chaque année.</li>
+        <li>Les réponses trouvées en ligne ne disent ni leur date ni leur source, et les assistants IA inventent des chiffres qui ont l'air justes.</li>
+        <li>Une heure de fiduciaire coûte plus cher que ce pack, et ne répond qu'à une seule question.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="fonctionnalites" class="section section-alt">
+    <div class="wrap">
+      <h2>Ce que contient le pack</h2>
+      <p class="lead">AdminCH réunit un générateur de QR-facture testé contre les vecteurs officiels de la spécification, des référentiels de données relevés le 10 septembre 2026 avec l'URL et la date de chaque valeur, et quatre skills prêts à l'emploi pour Claude Code. Ce qui n'a pas pu être vérifié porte la mention « non vérifié » au lieu d'être deviné. Tout fonctionne hors ligne, sans compte et sans connexion.</p>
+      <div class="grille">
+        <article class="fonction">
+          <h3>QR-facture conforme</h3>
+          <p>Payload Swiss QR Code, adresse structurée, références QRR et SCOR calculées, QR code en SVG ou PNG ; l'exemple officiel de la spécification est reproduit caractère par caractère par les tests.</p>
+        </article>
+        <article class="fonction">
+          <h3>Validation qui refuse au lieu de corriger</h3>
+          <p>Combinaison IBAN et référence, jeu de caractères, longueurs, plage du montant, limite commune de 140 caractères : les non-conformités sont énumérées et rien n'est écrit.</p>
+        </article>
+        <article class="fonction">
+          <h3>Vérification d'une facture reçue</h3>
+          <p>Relit le payload d'une QR-facture de fournisseur et restitue chaque champ avant paiement.</p>
+        </article>
+        <article class="fonction">
+          <h3>Informations de facture structurées</h3>
+          <p>Composition de la syntaxe S1 avec échappement : numéro, date, IDE, taux de TVA et conditions de paiement lisibles par le logiciel comptable du client.</p>
+        </article>
+        <article class="fonction">
+          <h3>TVA suisse</h3>
+          <p>Seuil d'assujettissement et ce qui entre dans son calcul, taux légaux, éligibilité à la méthode des taux de la dette fiscale nette, impôt sur les acquisitions, échéances à 60 jours.</p>
+        </article>
+        <article class="fonction">
+          <h3>Taux de la dette fiscale nette par branche</h3>
+          <p>52 branches issues de l'ordonnance de l'AFC en vigueur, avec leur plafond de chiffre d'affaires et une recherche insensible aux accents.</p>
+        </article>
+        <article class="fonction">
+          <h3>Charges sociales 2026</h3>
+          <p>Cotisations de l'indépendant avec le barème dégressif complet, conversion du revenu net en revenu déterminant, charges employeur et employé, salaire coordonné LPP, allocations familiales cantonales.</p>
+        </article>
+        <article class="fonction">
+          <h3>Délais des 26 cantons</h3>
+          <p>Délai de dépôt de la déclaration d'impôt, délai propre aux indépendants, modalités et coût de la prolongation, autorité et lien officiel pour chaque canton.</p>
+        </article>
+        <article class="fonction">
+          <h3>Quatre skills pour Claude Code</h3>
+          <p>QR-facture, TVA, charges sociales et échéances : les règles et les pièges sont écrits dans le skill, pour que l'assistant appelle le référentiel au lieu de répondre de mémoire.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="suisse" class="section">
+    <div class="wrap">
+      <h2>Spécifique à la Suisse</h2>
+      <ul class="puces">
+        <li>Swiss QR Code selon les Implementation Guidelines en vigueur, adresse structurée obligatoire depuis la version 2.3</li>
+        <li>Contrôle des combinaisons QR-IBAN avec référence QR et IBAN avec Creditor Reference, et détection du QR-IID 30000 à 31999</li>
+        <li>Avertissement sur la restriction au franc suisse des références QR à partir du 14 novembre 2026</li>
+        <li>Syntaxe des informations de facture S1</li>
+        <li>Taux de la dette fiscale nette de l'ordonnance de l'AFC RS 641.202.62</li>
+        <li>Barème dégressif AVS des indépendants et cotisation minimale annuelle</li>
+        <li>Seuils LPP, plafond de l'assurance-chômage et gain maximum LAA au 1er janvier 2026</li>
+        <li>Allocations familiales des caisses de NE, VD, GE, FR, VS et JU</li>
+        <li>Délais fiscaux des 26 cantons, avec la mention explicite des sept qui ne publient pas leur date</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="securite" class="section section-alt">
+    <div class="wrap">
+      <h2>Technique et sécurité</h2>
+      <dl class="tech">
+        <dt>Installation</dt><dd>Décompressez, double-cliquez sur installer.bat, puis sur demo.bat. Une seule dépendance à installer.</dd>
+        <dt>Prérequis</dt><dd>Windows, macOS ou Linux, Python 3.11 ou plus récent</dd>
+        <dt>Données locales</dt><dd>Entièrement local, aucune connexion réseau, aucune télémétrie, aucun compte</dd>
+        <dt>Tests</dt><dd>86 tests automatisés</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="prix" class="section">
+    <div class="wrap">
+      <h2>Prix</h2>
+      <div class="prix-cartes">
+        <div class="carte carte-principale">
+          <h3>Licence</h3>
+          <p class="montant">290 CHF</p>
+          <p class="libelle">Licence perpétuelle, usage commercial autorisé, un seul paiement</p>
+          <ul class="puces">
+            <li>Téléchargement immédiat après le paiement</li>
+            <li>Les programmes, les référentiels de données réutilisables, le guide écrit et les quatre skills</li>
+            <li>Le fichier des sources, avec la date de consultation de chaque valeur</li>
+            <li>La licence d'utilisation commerciale, en une page, lisible avant l'achat</li>
+            <li>Livré tel quel : ni support, ni mise à jour, ni remboursement sauf droit impératif</li>
+          </ul>
+          <p class="acceptation"><label><input type="checkbox" id="accepte-licence"> <span>Je comprends : livraison immédiate, ni support ni mise à jour, aucun remboursement sauf droit impératif. J'ai lu la licence.</span></label></p>
+          <p><a class="btn btn-primary" id="btn-acheter" href="#contact" aria-disabled="true" style="opacity:.5">Acheter</a></p>
+          <script>(function(){var c=document.getElementById("accepte-licence"),b=document.getElementById("btn-acheter");if(!c||!b){return;}var base=b.getAttribute("href");function maj(){b.style.opacity=c.checked?"":".5";b.setAttribute("aria-disabled",c.checked?"false":"true");}c.addEventListener("change",maj);maj();b.addEventListener("click",function(ev){if(!c.checked){ev.preventDefault();c.focus();return;}if(base.charAt(0)==="#"){return;}var sep=base.indexOf("?")>-1?"&":"?";b.setAttribute("href",base+sep+"checkout[custom][licence_acceptee]=oui&checkout[custom][date_acceptation]="+encodeURIComponent(new Date().toISOString().slice(0,10)));});})();</script>
+        </div>
+
+      </div>
+      <p class="mention-paiement">Paiement sécurisé via Lemon Squeezy (revendeur officiel), facture avec la TVA de votre pays, téléchargement immédiat. Aucun remboursement sauf droit impératif.</p>
+    </div>
+  </section>
+
+  <section id="faq" class="section section-alt">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Est-ce un conseil fiscal ?</summary>
+        <p>Non. AdminCH est un outil de calcul et un référentiel documentaire. Il ne remplace ni l'Administration fédérale des contributions, ni votre caisse de compensation, ni une fiduciaire. Chaque valeur porte sa source et sa date pour que vous puissiez la vérifier avant une décision engageante.</p>
+      </details>
+      <details>
+        <summary>Que se passe-t-il quand les chiffres changent ?</summary>
+        <p>Rien : le pack n'a aucune connexion réseau, donc aucune mise à jour silencieuse. L'édition 2026 reste l'édition 2026, avec sa date de relevé écrite partout. C'est volontaire : vous savez toujours de quand datent les valeurs que vous utilisez.</p>
+      </details>
+      <details>
+        <summary>Le pack imprime-t-il la facture complète ?</summary>
+        <p>Non. Il produit le QR code conforme, aux bonnes dimensions, et le récapitulatif des valeurs correctement formatées. L'insertion dans votre modèle de facture, avec le récépissé et la section paiement, reste à faire de votre côté. C'est écrit noir sur blanc dans le guide.</p>
+      </details>
+      <details>
+        <summary>Faut-il savoir programmer ?</summary>
+        <p>Non pour l'usage courant : installer.bat installe, demo.bat montre, et les commandes se copient telles quelles. Les fichiers de données s'ouvrent dans Excel sans Python. Pour l'intégrer à vos propres outils, une connaissance de Python aide.</p>
+      </details>
+      <details>
+        <summary>Puis-je l'utiliser pour mes clients ?</summary>
+        <p>Oui. La licence autorise l'usage commercial, y compris pour facturer vos propres clients, sur autant de postes que vous exploitez. Ce qui est interdit, c'est de revendre ou redistribuer le pack lui-même.</p>
+      </details>
+      <details>
+        <summary>Que veut dire « non vérifié » dans les données ?</summary>
+        <p>Que nous n'avons pas trouvé de source officielle publiée pour cette valeur — par exemple le délai fiscal ordinaire de sept cantons, qui est imprimé individuellement sur chaque déclaration. Nous préférons le dire et donner l'autorité compétente plutôt que d'inscrire une date approximative.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="guides" class="section">
+    <div class="wrap">
+      <h2>Guides</h2>
+      <ul class="puces">
+          <li><a href="qr-facture-quatre-erreurs-rejet-paiement.html">QR-facture : les quatre erreurs qui font rejeter un paiement</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

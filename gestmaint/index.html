@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GestMaint — Contrats d'entretien, bons d'intervention et factures QR sur votre poste.</title>
+<meta name="description" content="GestMaint : logiciel local de gestion d&#x27;interventions et de contrats d&#x27;entretien pour techniciens SAV en Suisse. Bons PDF, facture QR, TVA 8.1%.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="GestMaint — Contrats d&#x27;entretien, bons d&#x27;intervention et factures QR sur votre poste.">
+<meta property="og:description" content="GestMaint : logiciel local de gestion d&#x27;interventions et de contrats d&#x27;entretien pour techniciens SAV en Suisse. Bons PDF, facture QR, TVA 8.1%.">
+<link rel="canonical" href="https://tessalio.ch/gestmaint/index.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "GestMaint",
+  "description": "GestMaint : logiciel local de gestion d'interventions et de contrats d'entretien pour techniciens SAV en Suisse. Bons PDF, facture QR, TVA 8.1%.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows",
+  "softwareVersion": "1.0",
+  "offers": {
+    "@type": "Offer",
+    "price": "9800",
+    "priceCurrency": "CHF"
+  },
+  "url": "https://tessalio.ch/gestmaint/"
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">GestMaint</span></div>
+    <nav class="site-nav">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#prix">Prix</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>GestMaint</h1>
+      <p class="tagline">Contrats d'entretien, bons d'intervention et factures QR sur votre poste.</p>
+      <p class="cible">Techniciens SAV indépendants et petites équipes de maintenance (1 à 5 techniciens) en Suisse romande. Chauffagistes, climaticiens, installateurs de pompes à chaleur et électriciens SAV qui suivent un parc d'équipements et des contrats d'entretien périodiques.</p>
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="#prix">Voir les prix</a>
+        <a class="btn btn-ghost" href="#contact">Demander une démo</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="probleme" class="section">
+    <div class="wrap">
+      <h2>Le problème</h2>
+      <ul class="puces">
+        <li>Les contrats d'entretien sont suivis dans un tableur : la prochaine visite est repérée trop tard, ou pas du tout.</li>
+        <li>Les bons d'intervention sont retapés dans Word et l'historique d'une machine se disperse entre carnet, e-mails et messages.</li>
+        <li>Les factures partent en fin de mois, avec la TVA et la section de paiement à recomposer à la main.</li>
+        <li>Les outils de GMAO industriels sont surdimensionnés, et les offres en ligne supposent de confier les données clients à un tiers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="fonctionnalites" class="section section-alt">
+    <div class="wrap">
+      <h2>Ce que fait le logiciel</h2>
+      <p class="lead">GestMaint est une application web qui s'installe sur le poste du technicien : clients, équipements, contrats, interventions et factures dans une seule base. Le logiciel calcule la date de prochaine visite de chaque contrat, affiche les échéances à venir et produit les bons d'intervention et les factures en PDF. La base de données est un fichier local : rien ne quitte le poste.</p>
+      <div class="grille">
+        <article class="fonction">
+          <h3>Fiches clients</h3>
+          <p>Création, modification et suppression d'un client, avec sur une seule page ses équipements, ses contrats et ses interventions.</p>
+        </article>
+        <article class="fonction">
+          <h3>Parc d'équipements</h3>
+          <p>Une fiche par machine : désignation, marque, modèle, numéro de série, date d'installation, échéance constructeur, localisation et notes.</p>
+        </article>
+        <article class="fonction">
+          <h3>Contrats d'entretien périodiques</h3>
+          <p>Périodicité en mois, tarif et statut (actif, suspendu, expiré), avec calcul automatique de la date de prochaine visite à partir de la date de début.</p>
+        </article>
+        <article class="fonction">
+          <h3>Planning à 30 jours</h3>
+          <p>Une page qui réunit les interventions planifiées ou en cours, triées par date, et les contrats dont la visite tombe dans les 30 jours.</p>
+        </article>
+        <article class="fonction">
+          <h3>Bons d'intervention</h3>
+          <p>Intervention préventive, corrective ou d'urgence, rattachée à un client, un équipement, un contrat et un technicien, avec travaux réalisés et matériaux utilisés.</p>
+        </article>
+        <article class="fonction">
+          <h3>Export PDF du bon d'intervention</h3>
+          <p>Bon numéroté reprenant le client, l'équipement, la durée, les travaux, les matériaux et un emplacement de signature à faire remplir sur place.</p>
+        </article>
+        <article class="fonction">
+          <h3>Facturation avec TVA suisse</h3>
+          <p>Numérotation automatique, calcul de la TVA (8.1% par défaut) et du montant TTC, puis suivi du statut brouillon, émise ou payée.</p>
+        </article>
+        <article class="fonction">
+          <h3>Facture PDF avec section de paiement QR</h3>
+          <p>La facture PDF reprend le détail HT / TVA / TTC et un code QR dont le contenu est composé selon les Implementation Guidelines QR-facture de SIX, à partir de l'IBAN et de la référence enregistrés. Si les données ne sont pas conformes, le code n'est pas généré et le PDF liste les problèmes à corriger.</p>
+        </article>
+        <article class="fonction">
+          <h3>Gestion des comptes utilisateurs</h3>
+          <p>Écran réservé à l'administrateur : création d'un compte (identifiant, rôle admin ou technicien, mot de passe de 12 caractères minimum), changement de rôle ou de mot de passe, activation et désactivation. Un compte n'est jamais supprimé, il est désactivé : les interventions gardent leur technicien et le compte désactivé ne peut plus se connecter.</p>
+        </article>
+        <article class="fonction">
+          <h3>Tableau de bord des échéances</h3>
+          <p>Contrats en retard, visites à moins de 15 jours, contrats entre 15 et 30 jours, interventions ouvertes, chiffre d'affaires facturé du mois et total des factures impayées.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="suisse" class="section">
+    <div class="wrap">
+      <h2>Spécifique à la Suisse</h2>
+      <ul class="puces">
+        <li>TVA à 8.1% appliquée par défaut au calcul des factures, taux modifiable à la saisie.</li>
+        <li>Section de paiement QR : contenu composé selon les Implementation Guidelines QR-facture, code non généré si les données ne sont pas conformes, bordereau détachable non imprimé ; IBAN et référence de démonstration à remplacer par les vôtres.</li>
+        <li>Numéro postal d'acheminement validé sur quatre chiffres dans les fiches clients.</li>
+        <li>Montants en CHF, interface et documents PDF en français.</li>
+        <li>Base de données entièrement locale et aucune télémétrie : les données des clients restent sur le poste de l'entreprise.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="securite" class="section section-alt">
+    <div class="wrap">
+      <h2>Technique et sécurité</h2>
+      <dl class="tech">
+        <dt>Installation</dt><dd>Double-clic sur installer.bat : installation des dépendances Python, création de la base avec un jeu de données de démonstration et génération du script lancer.bat. L'application s'ouvre ensuite sur http://localhost:8081.</dd>
+        <dt>Prérequis</dt><dd>Windows 10/11 (macOS et Linux possibles), Python 3.11 ou 3.12, un navigateur web, environ 200 Mo d'espace disque. Aucune connexion internet n'est nécessaire à l'usage.</dd>
+        <dt>Données locales</dt><dd>SQLite local (fichier gestmaint.db), aucune télémétrie, aucun envoi vers un service tiers. La sauvegarde consiste à copier ce fichier.</dd>
+        <dt>Tests</dt><dd>158 tests automatisés (authentification, rôles, comptes utilisateurs, clients, équipements, contrats, interventions, facturation, tableau de bord, gestion d'erreurs, sécurité), lancés par python -m pytest tests/ -v.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="prix" class="section">
+    <div class="wrap">
+      <h2>Prix</h2>
+      <div class="prix-cartes">
+        <div class="carte carte-principale">
+          <h3>Licence</h3>
+          <p class="montant">9 800 CHF</p>
+          <p class="libelle">Licence perpétuelle, 1 à 3 techniciens</p>
+          <ul class="puces">
+            <li>Code source complet du logiciel</li>
+            <li>Installateur .bat et script de lancement</li>
+            <li>Guide utilisateur et script de démonstration</li>
+            <li>Jeu de données de démonstration pour la prise en main</li>
+            <li>Suite de 158 tests automatisés livrée avec le code</li>
+          </ul>
+          <p><a class="btn btn-primary" href="#contact">Demander une démo</a></p>
+        </div>
+        <div class="carte">
+          <h3>Maintenance annuelle</h3>
+          <p class="montant">1 500 CHF</p>
+          <p class="libelle">Maintenance annuelle optionnelle : mises à jour + support e-mail 12 mois</p>
+          <ul class="puces">
+            <li>Optionnelle, renouvelable chaque année.</li>
+            <li>Mises à jour et correctifs de sécurité.</li>
+            <li>Support par e-mail pendant 12 mois.</li>
+          </ul>
+          <p><a class="btn btn-ghost" href="#contact">Demander une démo</a></p>
+        </div>
+      </div>
+      <p class="mention-paiement">Paiement sécurisé via Lemon Squeezy, facture avec la TVA de votre pays, remboursement 14 jours.</p>
+    </div>
+  </section>
+
+  <section id="faq" class="section section-alt">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Où sont stockées les données ?</summary>
+        <p>Dans un fichier SQLite (gestmaint.db) sur le poste où le logiciel est installé. Aucune donnée n'est transmise à un tiers et l'application fonctionne sans connexion internet. La sauvegarde consiste à copier ce fichier sur un support externe ou un partage du réseau local.</p>
+      </details>
+      <details>
+        <summary>Est-ce que plusieurs personnes peuvent l'utiliser ?</summary>
+        <p>Le logiciel gère plusieurs comptes utilisateurs et rattache chaque intervention à un technicien. Un écran d'administration permet de créer les comptes, de choisir leur rôle (admin ou technicien) et de désactiver un compte qui ne sert plus. Il est livré configuré pour un poste (écoute sur 127.0.0.1) ; ouvrir l'accès aux autres postes du réseau local demande de modifier le paramètre d'écoute au lancement, ce que le code source livré permet.</p>
+      </details>
+      <details>
+        <summary>Puis-je reprendre mes données Excel ?</summary>
+        <p>La version 1.0 ne comprend pas d'import automatique : les clients, équipements et contrats se saisissent dans l'application. Le code source étant livré, un script de reprise peut être écrit à partir du modèle de données.</p>
+      </details>
+      <details>
+        <summary>Le QR de paiement est-il utilisable pour encaisser ?</summary>
+        <p>Le PDF de facture contient un code QR dont le contenu est composé selon les Implementation Guidelines QR-facture, à partir de l'IBAN et de la référence enregistrés. Si les données ne sont pas conformes, le code n'est pas généré et le PDF liste les problèmes. Le bordereau de versement détachable n'est pas imprimé. L'IBAN et la référence livrés sont ceux de la démonstration : il faut y placer les siens et faire contrôler un exemplaire par sa banque avant le premier envoi.</p>
+      </details>
+      <details>
+        <summary>Comment l'accès est-il protégé ?</summary>
+        <p>L'accès se fait par identifiant et mot de passe ; les mots de passe sont stockés hachés (bcrypt) et la session expire après 24 heures. Toute page consultée sans session renvoie vers l'écran de connexion, et les saisies sont validées côté serveur (dates, NPA, adresse e-mail, périodicité, montants, statuts).</p>
+      </details>
+      <details>
+        <summary>Comment se passent les mises à jour ?</summary>
+        <p>La licence est perpétuelle : la version installée continue de fonctionner sans abonnement. La maintenance annuelle est optionnelle et couvre les mises à jour et le support e-mail. Le code source est livré, ce qui permet aussi de faire adapter le logiciel par un prestataire.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="guides" class="section">
+    <div class="wrap">
+      <h2>Guides</h2>
+      <ul class="puces">
+          <li><a href="contrats-maintenance-echeances.html">Contrats de maintenance et échéances : ne plus rater une visite périodique</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

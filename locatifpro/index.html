@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocatifPro — Gestion locative sur votre poste : biens, baux, loyers et alertes d'impayés.</title>
+<meta name="description" content="Logiciel de gestion locative pour petites régies suisses : biens, baux, suivi des loyers, alertes d&#x27;impayés. Données entièrement locales, licence unique.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="LocatifPro — Gestion locative sur votre poste : biens, baux, loyers et alertes d&#x27;impayés.">
+<meta property="og:description" content="Logiciel de gestion locative pour petites régies suisses : biens, baux, suivi des loyers, alertes d&#x27;impayés. Données entièrement locales, licence unique.">
+<link rel="canonical" href="https://tessalio.ch/locatifpro/index.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "LocatifPro",
+  "description": "Logiciel de gestion locative pour petites régies suisses : biens, baux, suivi des loyers, alertes d'impayés. Données entièrement locales, licence unique.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows",
+  "softwareVersion": "1.0",
+  "offers": {
+    "@type": "Offer",
+    "price": "8000",
+    "priceCurrency": "CHF"
+  },
+  "url": "https://tessalio.ch/locatifpro/"
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">LocatifPro</span></div>
+    <nav class="site-nav">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#prix">Prix</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>LocatifPro</h1>
+      <p class="tagline">Gestion locative sur votre poste : biens, baux, loyers et alertes d'impayés.</p>
+      <p class="cible">Petites régies immobilières suisses de 2 à 10 personnes gérant 50 à 300 objets locatifs. Également les propriétaires privés qui gèrent plusieurs appartements et veulent garder leurs données sur leur propre machine.</p>
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="#prix">Voir les prix</a>
+        <a class="btn btn-ghost" href="#contact">Demander une démo</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="probleme" class="section">
+    <div class="wrap">
+      <h2>Le problème</h2>
+      <ul class="puces">
+        <li>Les loyers, cautions et échéances de baux vivent dans des classeurs Excel recopiés d'un poste à l'autre.</li>
+        <li>Repérer un loyer impayé ou partiel demande de relire ligne à ligne plusieurs onglets, en général en fin de mois.</li>
+        <li>Les quittances et les décomptes annuels sont retapés à la main dans un traitement de texte.</li>
+        <li>Les logiciels conçus pour les grandes agences supposent une mise en place lourde et un abonnement annuel.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="fonctionnalites" class="section section-alt">
+    <div class="wrap">
+      <h2>Ce que fait le logiciel</h2>
+      <p class="lead">LocatifPro est une application web qui tourne sur votre propre ordinateur : vous y saisissez vos biens, vos locataires et vos baux, et l'application suit chaque mensualité jusqu'à son encaissement. Le tableau de bord affiche les loyers impayés et les baux qui arrivent à échéance dans les 90 jours. Les données restent dans un fichier SQLite sur votre disque, sans compte en ligne ni abonnement. Développé à Neuchâtel, Suisse.</p>
+      <div class="grille">
+        <article class="fonction">
+          <h3>Fiches des biens locatifs</h3>
+          <p>Créer, consulter, modifier et archiver chaque objet avec nom, adresse, NPA, ville, surface, nombre de pièces, loyer de base, charges et statut (disponible, loué, travaux, archivé).</p>
+        </article>
+        <article class="fonction">
+          <h3>Fiches locataires</h3>
+          <p>Enregistrer prénom, nom, e-mail, téléphone, adresse précédente et notes, avec le lien vers les baux du locataire.</p>
+        </article>
+        <article class="fonction">
+          <h3>Baux et mensualités générées</h3>
+          <p>À la création d'un bail (dates, loyer, charges, caution), les 12 mensualités suivantes sont créées automatiquement au statut EN_ATTENTE, et la résiliation replace le bien en disponible.</p>
+        </article>
+        <article class="fonction">
+          <h3>Suivi des paiements</h3>
+          <p>Chaque mensualité est passée en PAYE, PARTIEL ou IMPAYE avec le montant reçu, la date et une note, l'historique restant consultable depuis la fiche du bail.</p>
+        </article>
+        <article class="fonction">
+          <h3>Tableau de bord et alertes</h3>
+          <p>Affiche les paiements impayés ou partiels des baux actifs, les baux arrivant à échéance dans les 90 jours, le nombre de baux actifs et le total des montants dus.</p>
+        </article>
+        <article class="fonction">
+          <h3>Quittances et décomptes PDF</h3>
+          <p>Depuis la liste des paiements, le lien « Quittance PDF » ouvre la quittance de loyer du mois choisi ; depuis la fiche d'un bail, un lien ouvre le décompte annuel des loyers. Les deux documents sont au format A4 et générés à la demande, sans fichier stocké sur le disque.</p>
+        </article>
+        <article class="fonction">
+          <h3>Export CSV pour la fiduciaire</h3>
+          <p>Depuis le tableau de bord, le lien « Export CSV » télécharge le récapitulatif fiscal de l'année (loyers perçus, impayés et nombre de paiements par bien), séparateur point-virgule et encodage UTF-8 ; le même récapitulatif est aussi disponible en PDF.</p>
+        </article>
+        <article class="fonction">
+          <h3>Calcul d'indexation IPC</h3>
+          <p>La page « IPC » de la barre de navigation prend le loyer actuel, l'année de référence du bail et l'année de calcul, puis affiche les deux indices OFS, la variation en pourcent, le loyer indexé et l'écart mensuel en CHF. Le calcul ne modifie aucun loyer enregistré ; le montant est indicatif et la décision reste soumise au droit du bail.</p>
+        </article>
+        <article class="fonction">
+          <h3>Accès protégé et gestion des utilisateurs</h3>
+          <p>Connexion par identifiant et mot de passe haché avec bcrypt, session signée expirant après 8 heures, clé de session configurable par variable d'environnement. L'écran « Utilisateurs », réservé au rôle administrateur, permet de créer des comptes, d'attribuer le rôle administrateur ou lecture, de réinitialiser un mot de passe et d'activer ou désactiver un compte ; un compte désactivé ne peut plus se connecter et un administrateur ne peut pas se désactiver lui-même.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="suisse" class="section">
+    <div class="wrap">
+      <h2>Spécifique à la Suisse</h2>
+      <ul class="puces">
+        <li>Table des indices IPC de l'OFS 2015-2025 intégrée pour le calcul du loyer indexé.</li>
+        <li>Fiches de biens avec NPA et ville, montants en CHF et dates au format jj.mm.aaaa dans les documents PDF.</li>
+        <li>Export CSV avec séparateur point-virgule, lisible directement par les tableurs configurés en français.</li>
+        <li>Interface, documents et guide utilisateur en français.</li>
+        <li>Aucune connexion sortante dans l'application : les données locatives ne quittent pas le poste.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="securite" class="section section-alt">
+    <div class="wrap">
+      <h2>Technique et sécurité</h2>
+      <dl class="tech">
+        <dt>Installation</dt><dd>Installer Python 3.11 ou plus récent, puis lancer installer.bat (dépendances et jeu de démonstration) ; démarrage ensuite par lancer.bat, l'application s'ouvre sur http://127.0.0.1:8080</dd>
+        <dt>Prérequis</dt><dd>Windows 10/11, Python 3.11+</dd>
+        <dt>Données locales</dt><dd>SQLite local (db/locatifpro.db), aucune télémétrie, aucun service externe appelé</dd>
+        <dt>Tests</dt><dd>138 tests automatisés (pytest), exécutés par une seule commande</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="prix" class="section">
+    <div class="wrap">
+      <h2>Prix</h2>
+      <div class="prix-cartes">
+        <div class="carte carte-principale">
+          <h3>Licence</h3>
+          <p class="montant">8 000 CHF</p>
+          <p class="libelle">Licence perpétuelle, 1 à 5 utilisateurs</p>
+          <ul class="puces">
+            <li>Installateur (installer.bat) et script de lancement (lancer.bat)</li>
+            <li>Guide utilisateur en français et script de démonstration</li>
+            <li>Jeu de données de démonstration avec des noms fictifs pour la prise en main</li>
+            <li>Support e-mail pendant 30 jours après la livraison</li>
+            <li>Remboursement sous 14 jours</li>
+          </ul>
+          <p><a class="btn btn-primary" href="#contact">Demander une démo</a></p>
+        </div>
+        <div class="carte">
+          <h3>Maintenance annuelle</h3>
+          <p class="montant">1 500 CHF</p>
+          <p class="libelle">Maintenance annuelle optionnelle : mises à jour + support e-mail 12 mois</p>
+          <ul class="puces">
+            <li>Optionnelle, renouvelable chaque année.</li>
+            <li>Mises à jour et correctifs de sécurité.</li>
+            <li>Support par e-mail pendant 12 mois.</li>
+          </ul>
+          <p><a class="btn btn-ghost" href="#contact">Demander une démo</a></p>
+        </div>
+      </div>
+      <p class="mention-paiement">Paiement sécurisé via Lemon Squeezy, facture avec la TVA de votre pays, remboursement 14 jours.</p>
+    </div>
+  </section>
+
+  <section id="faq" class="section section-alt">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Où sont stockées les données ?</summary>
+        <p>Dans un fichier SQLite posé sur votre disque (db/locatifpro.db). L'application ne contacte aucun service externe et n'envoie aucune donnée d'usage. Pour la sauvegarde, il suffit de copier le dossier du logiciel sur un disque externe ou sur votre serveur de sauvegarde.</p>
+      </details>
+      <details>
+        <summary>Peut-on l'utiliser depuis plusieurs postes ?</summary>
+        <p>La licence couvre 1 à 5 utilisateurs. En version 1.0, l'application démarre sur 127.0.0.1, c'est-à-dire sur le poste qui l'héberge ; un accès depuis d'autres postes du réseau local demande une configuration réseau de votre côté. Parlons-en avant l'achat si c'est votre cas.</p>
+      </details>
+      <details>
+        <summary>Puis-je reprendre mes données Excel ?</summary>
+        <p>La version 1.0 n'a pas d'import automatique : biens, locataires et baux se saisissent dans les formulaires de l'application. Pour un parc existant, la reprise peut être chiffrée séparément ; indiquez-nous le nombre d'objets et le format de vos fichiers.</p>
+      </details>
+      <details>
+        <summary>Comment la sécurité est-elle traitée ?</summary>
+        <p>Mots de passe hachés avec bcrypt, sessions signées avec expiration après 8 heures, accès aux pages refusé sans connexion, accès aux données par l'ORM SQLAlchemy sans SQL écrit à la main, et clé de session configurable par variable d'environnement. Ces points sont couverts par des tests automatisés.</p>
+      </details>
+      <details>
+        <summary>Peut-on voir le logiciel avant d'acheter ?</summary>
+        <p>Oui. Une démonstration d'environ cinq minutes parcourt la connexion, le tableau de bord, une fiche de bien, la régularisation d'un paiement et la création d'un objet, sur un jeu de données fictives.</p>
+      </details>
+      <details>
+        <summary>Que couvre la maintenance annuelle ?</summary>
+        <p>Les mises à jour correctives et fonctionnelles publiées pendant douze mois, ainsi que le support par e-mail sur la même période. Elle est optionnelle : la licence reste valable sans elle, sur la version livrée.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="guides" class="section">
+    <div class="wrap">
+      <h2>Guides</h2>
+      <ul class="puces">
+          <li><a href="decompte-charges-indexation-ipc.html">Décompte annuel des loyers et indexation IPC : deux dossiers de début d'année</a></li>
+          <li><a href="loyers-impayes-rappels.html">Loyers impayés et rappels : suivre chaque mensualité sans relire ses onglets</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

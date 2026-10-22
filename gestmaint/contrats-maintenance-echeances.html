@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contrats de maintenance et échéances : ne plus rater une visite périodique — GestMaint</title>
+<meta name="description" content="Périodicité en mois, prochaine visite, planning à 30 jours : comment GestMaint, logiciel local pour les petites entreprises de maintenance en Suisse, tient le calendrier des contrats d&#x27;entretien.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Contrats de maintenance et échéances : ne plus rater une visite périodique — GestMaint">
+<meta property="og:description" content="Périodicité en mois, prochaine visite, planning à 30 jours : comment GestMaint, logiciel local pour les petites entreprises de maintenance en Suisse, tient le calendrier des contrats d&#x27;entretien.">
+<link rel="canonical" href="https://tessalio.ch/gestmaint/contrats-maintenance-echeances.html">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">GestMaint</span></div>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#prix">Prix</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap prose">
+<h1>Contrats de maintenance et échéances : comment ne plus rater une visite périodique</h1>
+<p>Une petite entreprise de maintenance technique vit au rythme de ses contrats : la chaudière se révise chaque année, la ventilation à un autre intervalle, l&#x27;ascenseur, le sanitaire ou le tableau électrique selon le contrat signé. Ces périodicités et les obligations de contrôle propres à chaque métier se vérifient auprès du constructeur et de l&#x27;organe compétent ; un logiciel ne s&#x27;y substitue pas. Il peut en revanche tenir le calendrier et signaler ce qui arrive ou ce qui est en retard.</p>
+<p>GestMaint s&#x27;adresse aux techniciens SAV indépendants et aux petites équipes (1 à 5 techniciens) en Suisse romande. L&#x27;application s&#x27;installe sur le poste, s&#x27;utilise dans le navigateur et fonctionne sans connexion internet.</p>
+<h2>Le problème, tel qu&#x27;il se pose au quotidien</h2>
+<ul>
+<li>Les contrats d&#x27;entretien sont suivis dans un tableur : la prochaine visite est repérée trop tard, ou pas du tout.</li>
+<li>Les bons d&#x27;intervention sont retapés dans Word, et l&#x27;historique d&#x27;une machine se disperse entre carnet, e-mails et messages.</li>
+<li>Les factures partent en fin de mois, avec la TVA et la section de paiement à recomposer à la main.</li>
+<li>Les outils de GMAO industriels sont surdimensionnés, et les offres en ligne supposent de confier les données clients à un tiers.</li>
+</ul>
+<h2>Ce que fait GestMaint, point par point</h2>
+<ul>
+<li><strong>Contrats d&#x27;entretien périodiques</strong> — périodicité exprimée en mois, tarif et statut (actif, suspendu, expiré). La date de prochaine visite est calculée à partir de la date de début du contrat et reste modifiable en éditant le contrat lorsqu&#x27;une visite est décalée.</li>
+<li><strong>Parc d&#x27;équipements</strong> — une fiche par machine : désignation, marque, modèle, numéro de série, date d&#x27;installation, échéance constructeur, localisation et notes.</li>
+<li><strong>Planning à 30 jours</strong> — les interventions planifiées ou en cours, triées par date, et les contrats dont la visite tombe dans les 30 jours.</li>
+<li><strong>Tableau de bord des échéances</strong> — contrats en retard, visites à moins de 15 jours, contrats entre 15 et 30 jours, interventions ouvertes, chiffre d&#x27;affaires facturé du mois et factures impayées.</li>
+<li><strong>Bons d&#x27;intervention</strong> — intervention préventive, corrective ou d&#x27;urgence, rattachée à un client, un équipement, un contrat et un technicien, avec travaux et matériaux, exportable en PDF numéroté avec emplacement de signature.</li>
+<li><strong>Facturation</strong> — numérotation automatique, TVA à 8.1 % par défaut (taux modifiable à la saisie), statut brouillon, émise ou payée, et facture PDF avec une section de paiement QR dont le contenu est composé selon les Implementation Guidelines QR-facture de SIX.</li>
+</ul>
+<p>Les données sont écrites dans un fichier SQLite (gestmaint.db) sur votre poste, sans télémétrie ni envoi vers un service tiers ; pour sauvegarder, il suffit de copier ce fichier. La version 1.0 est couverte par 158 tests automatisés.</p>
+<h2>Les limites de la version 1.0</h2>
+<p>Autant les annoncer avant l&#x27;achat :</p>
+<ul>
+<li>Les échéances s&#x27;affichent à l&#x27;écran, dans le planning et le tableau de bord : la version 1.0 n&#x27;envoie ni rappel par e-mail ni SMS.</li>
+<li>Pas d&#x27;import Excel : clients, équipements et contrats se saisissent dans l&#x27;application. Le code source étant livré, un script de reprise reste possible.</li>
+<li>L&#x27;application est livrée configurée pour un poste (écoute sur 127.0.0.1) ; ouvrir l&#x27;accès aux autres postes du réseau local demande de modifier le paramètre d&#x27;écoute au lancement.</li>
+<li>Le contenu du code QR est composé selon les Implementation Guidelines QR-facture ; si les données ne sont pas conformes, le code n&#x27;est pas généré et le PDF liste les problèmes. Le bordereau de versement détachable n&#x27;est pas imprimé. L&#x27;IBAN et la référence livrés sont ceux du jeu de démonstration : remplacez-les par les vôtres et faites contrôler un exemplaire par votre banque avant le premier envoi.</li>
+<li>GestMaint ne se substitue pas aux obligations de contrôle de votre métier : les périodicités que vous saisissez restent de votre responsabilité.</li>
+</ul>
+<h2>Prix</h2>
+<p>La licence perpétuelle pour 1 à 3 techniciens est à 9 800 CHF. Elle comprend le code source complet, l&#x27;installateur, le script de lancement, le guide utilisateur, le script et le jeu de données de démonstration, ainsi que la suite de 158 tests. La maintenance annuelle est optionnelle, à 1 500 CHF : mises à jour et support par e-mail pendant 12 mois.</p>
+<h2>Voir GestMaint avant de décider</h2>
+<p>Le jeu de données de démonstration permet de parcourir les contrats et leurs prochaines visites, le planning à 30 jours, un bon d&#x27;intervention en PDF et une facture avec section de paiement QR.</p>
+<p>GestMaint est développé par Olivier, à Neuchâtel, en Suisse, avec l&#x27;aide d&#x27;une intelligence artificielle pour l&#x27;écriture du code et de la documentation. <a href="index.html">Fonctionnalités, aspects techniques et prix de GestMaint</a> : pour une question, une démonstration ou un devis, écrivez-nous depuis la <a href="index.html#contact">page de contact</a> — nous répondons sous 2 jours ouvrables.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap prose">
+      <h2>En savoir plus sur GestMaint</h2>
+      <p><a href="index.html">Fonctionnalités, aspects techniques et prix de GestMaint</a></p>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

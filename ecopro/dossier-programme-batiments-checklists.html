@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dossier Programme Bâtiments : ne plus perdre un projet pour un document manquant — EcoPro</title>
+<meta name="description" content="Pièces du dossier de subvention, certificat GSP, attestation de mise en service : comment EcoPro, logiciel local pour installateurs de pompes à chaleur en Suisse, tient la liste des documents attendus à chaque phase.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Dossier Programme Bâtiments : ne plus perdre un projet pour un document manquant — EcoPro">
+<meta property="og:description" content="Pièces du dossier de subvention, certificat GSP, attestation de mise en service : comment EcoPro, logiciel local pour installateurs de pompes à chaleur en Suisse, tient la liste des documents attendus à chaque phase.">
+<link rel="canonical" href="https://tessalio.ch/ecopro/dossier-programme-batiments-checklists.html">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">EcoPro</span></div>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#prix">Prix</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap prose">
+<h1>Dossier Programme Bâtiments et checklists par phase : ne plus perdre un projet PAC pour un document manquant</h1>
+<p>Une pompe à chaleur se pose en quelques jours. Le dossier qui l’accompagne, lui, s’étale sur des mois : demande communale, pièces pour l’aide cantonale du Programme Bâtiments, certificat GSP, attestation de mise en service, procès-verbal de réception. Les exigences varient selon le canton et évoluent dans le temps : vérifiez la liste applicable à votre chantier auprès de votre service cantonal de l’énergie. Un logiciel ne dépose aucune demande à votre place. Il peut en revanche tenir la liste des documents attendus et montrer, à tout moment, ce qui manque encore.</p>
+<p>EcoPro s’adresse aux entreprises d’installation de pompes à chaleur en Suisse, de 1 à 10 techniciens, et au responsable qui suit lui-même chaque dossier. L’application s’installe sur un poste Windows et s’utilise dans le navigateur, sans compte en ligne.</p>
+<h2>Le problème, tel qu’il se pose au quotidien</h2>
+<ul>
+<li>Certaines pièces ne se rattrapent pas : les photos avant travaux ou le devis signé par le client doivent exister avant le début du chantier, pas après.</li>
+<li>Les documents circulent entre e-mails, messages et classeurs papier : personne ne sait précisément ce qui est reçu, validé ou manquant.</li>
+<li>Le certificat GSP et l’attestation de mise en service arrivent en fin de parcours ; le dossier reste ouvert sans que quiconque le relance, et le versement attend.</li>
+<li>Le suivi vit dans des fichiers Excel séparés par étape, sans lien avec le devis.</li>
+</ul>
+<h2>Ce que fait EcoPro, point par point</h2>
+<ul>
+<li><strong>Pipeline en huit phases</strong> — de prospect à maintenance, chaque projet traverse les phases audit, devis, permis, subvention, installation et réception ; une vue Kanban regroupe les projets actifs par phase.</li>
+<li><strong>Checklists de documents par phase</strong> — les documents attendus en audit, permis, subvention, installation et réception sont créés à l’ouverture du projet et se marquent manquant, reçu ou validé. La phase subvention couvre le formulaire Programme Bâtiments, le certificat GSP, le devis signé par le client et les photos avant travaux ; la phase réception, le procès-verbal signé, la documentation technique de la PAC et l’attestation de mise en service GSP.</li>
+<li><strong>Clients et propriétés</strong> — fiche client avec coordonnées et NPA, propriétés rattachées avec type de bâtiment, année de construction, surface et chauffage actuel.</li>
+<li><strong>Devis et export PDF</strong> — lignes de devis (description, quantité, prix unitaire), recalcul du montant hors taxes, de la TVA à 8.1 % et du total en CHF, statut du devis, puis export en PDF avec en-tête d’entreprise et validité de l’offre.</li>
+<li><strong>Montant de subvention reporté sur le devis</strong> — le montant que vous saisissez sur le projet apparaît sur le devis PDF, avec la part nette correspondante.</li>
+<li><strong>Contrats de maintenance</strong> — périodicité de 6, 12 ou 24 mois, prochaine visite recalculée après chaque visite enregistrée, liste des visites prévues dans les 30 jours.</li>
+<li><strong>Tableau de bord</strong> — compteurs de projets par phase, subventions saisies en attente, échéances à 14 jours et factures impayées.</li>
+</ul>
+<p>Les données sont écrites dans un fichier SQLite (ecopro.db) sur votre machine. L’application ne comporte ni télémétrie ni appel réseau sortant ; pour sauvegarder, il suffit de copier ce fichier. La version 1.0 est couverte par 133 tests automatisés.</p>
+<h2>Les limites de la version 1.0</h2>
+<p>Autant les annoncer avant l’achat :</p>
+<ul>
+<li>EcoPro ne remplit aucun formulaire cantonal et ne dépose aucune demande. Il tient la checklist et enregistre le montant que vous saisissez ; la suite du dossier dépend de l’autorité compétente.</li>
+<li>Les listes de documents livrées sont un point de départ. Elles ne remplacent pas les exigences de votre canton, qu’il vous appartient de vérifier et de reporter dans l’application.</li>
+<li>Pas d’import Excel : les clients, propriétés et projets se saisissent dans l’application.</li>
+<li>La version 1.0 est prévue pour un poste : le serveur démarre sur 127.0.0.1 et n’est pas exposé au réseau local par défaut. Plusieurs comptes utilisateurs peuvent s’y connecter.</li>
+</ul>
+<h2>Prix</h2>
+<p>La licence perpétuelle pour 1 à 5 utilisateurs est à 12 000 CHF. Elle comprend les fichiers d’installation, un jeu de données de démonstration, le guide utilisateur et le script de démonstration, le support par e-mail pendant 30 jours après la livraison et le remboursement dans les 14 jours selon les conditions générales. La maintenance annuelle est optionnelle, à 1 800 CHF : mises à jour et support par e-mail pendant 12 mois.</p>
+<h2>Voir EcoPro avant de décider</h2>
+<p>L’application est livrée avec un jeu de données fictives et un script de démonstration d’environ quatre minutes : pipeline, checklists de documents, devis PDF et planning de maintenance.</p>
+<p>EcoPro est développé par Olivier, à Neuchâtel, en Suisse, avec l’aide d’une intelligence artificielle pour l’écriture du code et de la documentation. Pour une question, une démonstration ou un devis, écrivez-nous : nous répondons sous 2 jours ouvrables.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap prose">
+      <h2>En savoir plus sur EcoPro</h2>
+      <p><a href="index.html">Fonctionnalités, aspects techniques et prix de EcoPro</a></p>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

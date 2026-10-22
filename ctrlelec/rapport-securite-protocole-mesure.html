@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rapport de sécurité RaSi : un PDF structuré sans ressaisie — CtrlElec</title>
+<meta name="description" content="Mesures, défauts et rapport de sécurité : comment CtrlElec, logiciel local pour contrôleurs OIBT, produit un PDF structuré sans double saisie.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:title" content="Rapport de sécurité RaSi : un PDF structuré sans ressaisie — CtrlElec">
+<meta property="og:description" content="Mesures, défauts et rapport de sécurité : comment CtrlElec, logiciel local pour contrôleurs OIBT, produit un PDF structuré sans double saisie.">
+<link rel="canonical" href="https://tessalio.ch/ctrlelec/rapport-securite-protocole-mesure.html">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">CtrlElec</span></div>
+    <nav class="site-nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#prix">Prix</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap prose">
+<h1>Rapport de sécurité (RaSi) et protocole de mesure : produire un PDF structuré sans ressaisie</h1>
+<p>Le rapport de sécurité est ce qui reste du contrôle une fois la visite terminée. Les mesures, elles, ont été relevées sur place, souvent sur une feuille. Entre les deux, il y a une ressaisie : les valeurs sont retapées le soir dans un modèle Word, avec le risque d&#x27;oublier un point de mesure ou un défaut. Les exigences de contenu et de forme du rapport relèvent de l&#x27;OIBT, et l&#x27;ESTI reste l&#x27;interlocuteur en cas de doute ; un logiciel ne s&#x27;y substitue pas. Il peut en revanche supprimer la double saisie.</p>
+<p>CtrlElec s&#x27;adresse aux contrôleurs OIBT indépendants et aux petites entreprises de contrôle (1 à 5 contrôleurs) actives en Suisse. L&#x27;application s&#x27;installe sur un poste Windows et s&#x27;utilise dans le navigateur, sans compte en ligne.</p>
+<h2>Le problème, tel qu&#x27;il se pose au quotidien</h2>
+<ul>
+<li>Les mesures et les défauts sont notés sur papier pendant le contrôle, puis ressaisis le soir dans un autre outil.</li>
+<li>Le rapport de sécurité est retapé sous Word à chaque contrôle, sans structure imposée ni reprise des mesures déjà saisies.</li>
+<li>D&#x27;un rapport à l&#x27;autre, la présentation bouge : les rubriques changent d&#x27;ordre ou de contenu.</li>
+<li>Le relevé des défauts vit dans un coin du document, et rien n&#x27;assure qu&#x27;il est repris en entier dans la version remise.</li>
+</ul>
+<h2>Ce que fait CtrlElec</h2>
+<ul>
+<li><strong>Saisie des mesures dans la fiche de contrôle</strong> — mesures Riso, boucle de défaut, PE, FI/RCD et disjoncteur, chacune avec son point de mesure, sa valeur et son unité. La fiche porte aussi le type de contrôle (périodique, initial, réception, sporadique) et sa date.</li>
+<li><strong>Relevé des défauts</strong> — chaque défaut constaté est saisi avec un code, une description et une gravité : mineur, majeur ou dangereux.</li>
+<li><strong>Rapport RaSi en PDF</strong> — un document structuré selon les rubriques de l&#x27;art. 37 OIBT, en quatre sections : emplacement, description de l&#x27;installation, normes appliquées, résultats des mesures et des défauts. Les valeurs viennent de la fiche de contrôle : rien n&#x27;est retapé.</li>
+<li><strong>Champ « normes appliquées »</strong> — pré-rempli avec NIBT 2020, OIBT, et modifiable contrôle par contrôle.</li>
+<li><strong>Un dossier qui tient ensemble</strong> — le contrôle reste rattaché à son installation et à son client, et le rapport peut être régénéré.</li>
+</ul>
+<p>Les données sont écrites dans un fichier SQLite sur votre machine, le serveur n&#x27;écoute que sur 127.0.0.1 et le code ne contient ni télémétrie ni appel réseau sortant. Prérequis : Windows 10 ou 11, Python 3.10 ou plus récent, un navigateur. La version 1.0 est couverte par 134 tests automatisés.</p>
+<h2>Ce que CtrlElec ne fait pas</h2>
+<ul>
+<li>Pas de signature électronique : le PDF sort non signé.</li>
+<li>Pas d&#x27;envoi automatique. Le rapport est un fichier sur votre poste, que vous transmettez comme vous le faites aujourd&#x27;hui.</li>
+<li>Aucune appréciation de la conformité de l&#x27;installation, aucune validation auprès d&#x27;une autorité : les exigences réglementaires restent celles de l&#x27;OIBT, et les questions d&#x27;interprétation se posent à l&#x27;ESTI.</li>
+<li>CtrlElec ne remplace pas le contrôleur agréé : le contenu du rapport, sa vérification et sa signature relèvent de votre responsabilité, et son acceptation dépend du destinataire.</li>
+<li>Pas de reprise automatique d&#x27;anciens rapports Word ou Excel : la version 1.0 ne comporte pas d&#x27;import.</li>
+</ul>
+<h2>Comment ça se passe concrètement</h2>
+<ul>
+<li><strong>Avant la visite</strong> — le client et l&#x27;installation existent déjà dans le registre ; vous ouvrez un contrôle et choisissez son type.</li>
+<li><strong>Pendant le contrôle</strong> — vous saisissez chaque mesure avec son point de mesure, sa valeur et son unité, et chaque défaut avec son code, sa description et sa gravité.</li>
+<li><strong>Au moment de conclure</strong> — vous relisez le champ « normes appliquées » et complétez l&#x27;emplacement et la description de l&#x27;installation.</li>
+<li><strong>À la génération</strong> — le PDF reprend les quatre rubriques, les mesures et les défauts tels qu&#x27;ils ont été saisis. Vous le relisez, le signez et le transmettez.</li>
+<li><strong>Après la remise</strong> — dès que le contrôle passe au statut remis, la prochaine échéance de l&#x27;installation est recalculée selon sa périodicité.</li>
+</ul>
+<h2>Prix</h2>
+<p>La licence perpétuelle pour 1 à 3 contrôleurs est à 11 800 CHF TTC : application complète et code source Python, installateur Windows, guide utilisateur, documentation d&#x27;architecture et jeu de données fictives. Le remboursement dans les 14 jours suit les conditions de licence.</p>
+<p>La maintenance annuelle est optionnelle, à 1 800 CHF TTC : mises à jour et support par e-mail pendant 12 mois.</p>
+<h2>Voir le rapport avant de décider</h2>
+<p>L&#x27;application est livrée avec un jeu de données fictives et un script de démonstration d&#x27;environ quatre minutes : création d&#x27;un contrôle avec mesures et défauts, rapport RaSi, facture, remise du contrôle et registre des relances.</p>
+<p>CtrlElec est développé à Neuchâtel, en Suisse. Pour une question, une démonstration ou un devis, écrivez-nous : nous répondons sous 2 jours ouvrables.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap prose">
+      <h2>En savoir plus sur CtrlElec</h2>
+      <p><a href="index.html">Fonctionnalités, aspects techniques et prix de CtrlElec</a></p>
+      <p>Écrivez-nous à <a href="mailto:contact@tessalio.ch">contact@tessalio.ch</a> — réponse sous 2 jours ouvrables.</p>
+      <p class="note-ia">Nos réponses peuvent être rédigées par un assistant IA. Derrière Tessalio, il y a Alexia Tosetti et Olivier Tosetti : écrivez « humain » et l'un d'eux vous répond sous 1 jour ouvrable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="identite">Tessalio · raison individuelle de Alexia Tosetti · Sous-le-signal 1 2067 Chaumont</p>
+    <p class="liens-legaux">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="cgv.html">CGV</a>
+      <a href="confidentialite.html">Confidentialité</a>
+    </p>
+    <p class="origine">Développé à Neuchâtel, Suisse</p>
+  </div>
+</footer>
+
+</body>
+</html>

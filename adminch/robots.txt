@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tessalio.ch/adminch/sitemap.xml
