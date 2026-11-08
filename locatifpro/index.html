@@ -9,7 +9,8 @@
 <meta property="og:locale" content="fr_CH">
 <meta property="og:title" content="LocatifPro — Gestion locative sur votre poste : biens, baux, loyers et alertes d&#x27;impayés.">
 <meta property="og:description" content="Logiciel de gestion locative pour petites régies suisses : biens, baux, suivi des loyers, alertes d&#x27;impayés. Données entièrement locales, licence unique.">
-<link rel="canonical" href="https://tessalio.ch/locatifpro/index.html">
+<link rel="canonical" href="https://tessalio.ch/locatifpro/">
+<meta name="robots" content="noindex, follow">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -20,19 +21,83 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Windows",
   "softwareVersion": "1.0",
+  "softwareRequirements": "Windows 10/11, Python 3.11+",
+  "inLanguage": "fr-CH",
+  "url": "https://tessalio.ch/locatifpro/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tessalio",
+    "url": "https://tessalio.ch/"
+  },
   "offers": {
     "@type": "Offer",
     "price": "8000",
-    "priceCurrency": "CHF"
-  },
-  "url": "https://tessalio.ch/locatifpro/"
+    "priceCurrency": "CHF",
+    "url": "https://tessalio.ch/locatifpro/#prix"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Où sont stockées les données ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dans un fichier SQLite posé sur votre disque (db/locatifpro.db). L'application ne contacte aucun service externe et n'envoie aucune donnée d'usage. Pour la sauvegarde, il suffit de copier le dossier du logiciel sur un disque externe ou sur votre serveur de sauvegarde."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on l'utiliser depuis plusieurs postes ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La licence couvre 1 à 5 utilisateurs. En version 1.0, l'application démarre sur 127.0.0.1, c'est-à-dire sur le poste qui l'héberge ; un accès depuis d'autres postes du réseau local demande une configuration réseau de votre côté. Parlons-en avant l'achat si c'est votre cas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je reprendre mes données Excel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La version 1.0 n'a pas d'import automatique : biens, locataires et baux se saisissent dans les formulaires de l'application. Pour un parc existant, la reprise peut être chiffrée séparément ; indiquez-nous le nombre d'objets et le format de vos fichiers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment la sécurité est-elle traitée ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mots de passe hachés avec bcrypt, sessions signées avec expiration après 8 heures, accès aux pages refusé sans connexion, accès aux données par l'ORM SQLAlchemy sans SQL écrit à la main, et clé de session configurable par variable d'environnement. Ces points sont couverts par des tests automatisés."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on voir le logiciel avant d'acheter ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Une démonstration d'environ cinq minutes parcourt la connexion, le tableau de bord, une fiche de bien, la régularisation d'un paiement et la création d'un objet, sur un jeu de données fictives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que couvre la maintenance annuelle ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les mises à jour correctives et fonctionnelles publiées pendant douze mois, ainsi que le support par e-mail sur la même période. Elle est optionnelle : la licence reste valable sans elle, sur la version livrée."
+      }
+    }
+  ]
 }
 </script>
 </head>
 <body>
 <header class="site-header">
   <div class="wrap header-inner">
-    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">LocatifPro</span></div>
+    <div class="brand"><a class="brand-name" href="/">Tessalio</a><span class="sep">·</span><span class="brand-produit">LocatifPro</span></div>
     <nav class="site-nav">
       <a href="#fonctionnalites">Fonctionnalités</a>
       <a href="#prix">Prix</a>
@@ -225,6 +290,7 @@
     <p class="liens-legaux">
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="cgv.html">CGV</a>
+      
       <a href="confidentialite.html">Confidentialité</a>
     </p>
     <p class="origine">Développé à Neuchâtel, Suisse</p>

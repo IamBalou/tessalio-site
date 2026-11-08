@@ -10,13 +10,14 @@
 <meta property="og:title" content="QR-facture : les quatre erreurs qui font rejeter un paiement — AdminCH">
 <meta property="og:description" content="Adresse combinée, référence incompatible avec l&#x27;IBAN, clé de contrôle fausse, caractères et longueurs : quatre non-conformités qu&#x27;AdminCH refuse.">
 <link rel="canonical" href="https://tessalio.ch/adminch/qr-facture-quatre-erreurs-rejet-paiement.html">
+
 <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 <header class="site-header">
   <div class="wrap header-inner">
-    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">AdminCH</span></div>
+    <div class="brand"><a class="brand-name" href="/">Tessalio</a><span class="sep">·</span><span class="brand-produit">AdminCH</span></div>
     <nav class="site-nav">
       <a href="index.html">Accueil</a>
       <a href="index.html#prix">Prix</a>
@@ -33,7 +34,7 @@
 <p>Voici quatre non-conformités que le générateur d&#x27;AdminCH contrôle avant d&#x27;écrire quoi que ce soit. Chacune est traçable à une règle de la spécification, référencée dans le fichier des sources livré avec le pack.</p>
 <h2>1. L&#x27;adresse de type combiné, abandonnée</h2>
 <p><strong>Le symptôme</strong> : la facture est produite par un modèle qui fonctionnait avant, et plus rien n&#x27;indique un problème à l&#x27;écran.</p>
-<p><strong>La cause</strong> : depuis la version 2.3 de la spécification, en vigueur depuis le 21 novembre 2025, seule l&#x27;adresse structurée est admise. Rue, numéro, numéro postal, localité et pays occupent des champs distincts. Le type combiné, qui laissait deux lignes d&#x27;adresse libres, est supprimé. Les modèles antérieurs le produisent encore.</p>
+<p><strong>La cause</strong> : depuis la version 2.3 de la spécification, en vigueur depuis le 22 novembre 2025, seule l&#x27;adresse structurée est admise. Rue, numéro, numéro postal, localité et pays occupent des champs distincts. Le type combiné, qui laissait deux lignes d&#x27;adresse libres, est supprimé. Les modèles antérieurs le produisent encore.</p>
 <p><strong>Ce que fait AdminCH</strong> : le générateur n&#x27;offre pas d&#x27;autre choix. L&#x27;adresse est un objet à champs séparés et le payload émet toujours le marqueur d&#x27;adresse structurée ; les champs obligatoires et le code pays à deux lettres sont contrôlés avant l&#x27;écriture.</p>
 <h2>2. La référence qui ne va pas avec l&#x27;IBAN</h2>
 <p><strong>Le symptôme</strong> : la facture est refusée à la lecture, ou le paiement reçu ne se rapproche d&#x27;aucune facture.</p>
@@ -56,7 +57,7 @@
 </ul>
 <h2>Prix</h2>
 <p>290 CHF, un seul paiement, licence perpétuelle avec usage commercial autorisé. Le pack comprend les programmes, les référentiels de données, le guide écrit, les quatre skills pour Claude Code et le fichier des sources daté. Remboursement sous 14 jours.</p>
-<p>AdminCH est développé par Olivier, à Neuchâtel, en Suisse, avec l&#x27;aide d&#x27;une intelligence artificielle pour l&#x27;écriture du code et de la documentation. Pour une question, écrivez-nous : nous répondons sous 2 jours ouvrables.</p>
+<p>AdminCH est édité par Tessalio, à Neuchâtel, avec l&#x27;aide d&#x27;une intelligence artificielle pour l&#x27;écriture du code et de la documentation. Pour une question, écrivez-nous : nous répondons sous 2 jours ouvrables.</p>
     </div>
   </section>
 
@@ -76,6 +77,7 @@
     <p class="liens-legaux">
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="cgv.html">CGV</a>
+      <a href="cgv.html#remboursement">Remboursement</a>
       <a href="confidentialite.html">Confidentialité</a>
     </p>
     <p class="origine">Développé à Neuchâtel, Suisse</p>

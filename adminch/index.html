@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AdminCH — L'administration suisse d'un indépendant, avec la source de chaque chiffre</title>
+<title>AdminCH 2026 — QR-facture, TVA et charges sociales sourcées</title>
 <meta name="description" content="Pack pour indépendants et PME suisses : QR-facture conforme, TVA, charges sociales 2026, délais des 26 cantons. Chaque valeur sourcée et datée.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_CH">
-<meta property="og:title" content="AdminCH — L&#x27;administration suisse d&#x27;un indépendant, avec la source de chaque chiffre">
+<meta property="og:title" content="AdminCH 2026 — QR-facture, TVA et charges sociales sourcées">
 <meta property="og:description" content="Pack pour indépendants et PME suisses : QR-facture conforme, TVA, charges sociales 2026, délais des 26 cantons. Chaque valeur sourcée et datée.">
-<link rel="canonical" href="https://tessalio.ch/adminch/index.html">
+<link rel="canonical" href="https://tessalio.ch/adminch/">
+
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -18,21 +19,102 @@
   "name": "AdminCH",
   "description": "Pack pour indépendants et PME suisses : QR-facture conforme, TVA, charges sociales 2026, délais des 26 cantons. Chaque valeur sourcée et datée.",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Windows",
+  "operatingSystem": "Windows, macOS, Linux",
   "softwareVersion": "1.0",
+  "alternateName": "AdminCH — édition 2026",
+  "softwareRequirements": "Windows, macOS ou Linux, Python 3.11 ou plus récent",
+  "inLanguage": "fr-CH",
+  "url": "https://tessalio.ch/adminch/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tessalio",
+    "url": "https://tessalio.ch/"
+  },
   "offers": {
     "@type": "Offer",
     "price": "290",
-    "priceCurrency": "CHF"
-  },
-  "url": "https://tessalio.ch/adminch/"
+    "priceCurrency": "CHF",
+    "url": "https://tessalio.ch/adminch/#prix"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Est-ce un conseil fiscal ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. AdminCH est un outil de calcul et un référentiel documentaire. Il ne remplace ni l'Administration fédérale des contributions, ni votre caisse de compensation, ni une fiduciaire. Chaque valeur porte sa source et sa date pour que vous puissiez la vérifier avant une décision engageante."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il quand les chiffres changent ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rien : le pack n'a aucune connexion réseau, donc aucune mise à jour silencieuse. L'édition 2026 reste l'édition 2026, avec sa date de relevé écrite partout. C'est volontaire : vous savez toujours de quand datent les valeurs que vous utilisez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le pack imprime-t-il la facture complète ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Il produit le QR code conforme, aux bonnes dimensions, et le récapitulatif des valeurs correctement formatées. L'insertion dans votre modèle de facture, avec le récépissé et la section paiement, reste à faire de votre côté. C'est écrit noir sur blanc dans le guide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il savoir programmer ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non pour l'usage courant : installer.bat installe, demo.bat montre, et les commandes se copient telles quelles. Les fichiers de données s'ouvrent dans Excel sans Python. Pour l'intégrer à vos propres outils, une connaissance de Python aide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je l'utiliser pour mes clients ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. La licence autorise l'usage commercial, y compris pour facturer vos propres clients, sur autant de postes que vous exploitez. Ce qui est interdit, c'est de revendre ou redistribuer le pack lui-même."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que veut dire « non vérifié » dans les données ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Que nous n'avons pas trouvé de source officielle publiée pour cette valeur — par exemple le délai fiscal ordinaire de sept cantons, qui est imprimé individuellement sur chaque déclaration. Nous préférons le dire et donner l'autorité compétente plutôt que d'inscrire une date approximative."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Et si le pack ne me convient pas ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Écrivez à contact@tessalio.ch dans les 14 jours qui suivent l'achat, avec l'adresse e-mail et le numéro de la commande : le remboursement est intégral et sans justification. Il est exécuté par Lemon Squeezy sur votre moyen de paiement d'origine ; votre licence prend alors fin et vous supprimez les fichiers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Il existe des générateurs de QR-facture gratuits. Pourquoi payer ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si vous émettez une QR-facture de temps en temps, le portail de votre banque ou un générateur gratuit suffit. AdminCH s'adresse à ceux qui veulent, au même endroit, une validation qui refuse les combinaisons IBAN et référence, les caractères et les longueurs non conformes, la relecture des QR-factures reçues, et des référentiels TVA, charges sociales et délais cantonaux dont chaque valeur porte sa source."
+      }
+    }
+  ]
 }
 </script>
 </head>
 <body>
 <header class="site-header">
   <div class="wrap header-inner">
-    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">AdminCH</span></div>
+    <div class="brand"><a class="brand-name" href="/">Tessalio</a><span class="sep">·</span><span class="brand-produit">AdminCH</span></div>
     <nav class="site-nav">
       <a href="#fonctionnalites">Fonctionnalités</a>
       <a href="#prix">Prix</a>
@@ -59,10 +141,9 @@
     <div class="wrap">
       <h2>Le problème</h2>
       <ul class="puces">
-        <li>Les règles de la QR-facture ont changé en novembre 2025 : les modèles de facture d'avant produisent une adresse non conforme, et les paiements sont rejetés.</li>
+        <li>Depuis le 22 novembre 2025, la QR-facture n'admet plus que l'adresse structurée. Les modèles de facture d'avant peuvent encore produire l'ancien format, dont PostFinance n'assure le traitement que jusqu'au 13 novembre 2026.</li>
         <li>Les taux, seuils et délais suisses sont dispersés entre l'AFC, l'OFAS, SIX et 26 administrations cantonales, et changent chaque année.</li>
         <li>Les réponses trouvées en ligne ne disent ni leur date ni leur source, et les assistants IA inventent des chiffres qui ont l'air justes.</li>
-        <li>Une heure de fiduciaire coûte plus cher que ce pack, et ne répond qu'à une seule question.</li>
       </ul>
     </div>
   </section>
@@ -154,15 +235,15 @@
             <li>Les programmes, les référentiels de données réutilisables, le guide écrit et les quatre skills</li>
             <li>Le fichier des sources, avec la date de consultation de chaque valeur</li>
             <li>La licence d'utilisation commerciale, en une page, lisible avant l'achat</li>
-            <li>Livré tel quel : ni support, ni mise à jour, ni remboursement sauf droit impératif</li>
+            <li>Livré tel quel : ni support ni mise à jour. Remboursement sur simple demande pendant 14 jours</li>
           </ul>
-          <p class="acceptation"><label><input type="checkbox" id="accepte-licence"> <span>Je comprends : livraison immédiate, ni support ni mise à jour, aucun remboursement sauf droit impératif. J'ai lu la licence.</span></label></p>
-          <p><a class="btn btn-primary" id="btn-acheter" href="#contact" aria-disabled="true" style="opacity:.5">Acheter</a></p>
-          <script>(function(){var c=document.getElementById("accepte-licence"),b=document.getElementById("btn-acheter");if(!c||!b){return;}var base=b.getAttribute("href");function maj(){b.style.opacity=c.checked?"":".5";b.setAttribute("aria-disabled",c.checked?"false":"true");}c.addEventListener("change",maj);maj();b.addEventListener("click",function(ev){if(!c.checked){ev.preventDefault();c.focus();return;}if(base.charAt(0)==="#"){return;}var sep=base.indexOf("?")>-1?"&":"?";b.setAttribute("href",base+sep+"checkout[custom][licence_acceptee]=oui&checkout[custom][date_acceptation]="+encodeURIComponent(new Date().toISOString().slice(0,10)));});})();</script>
+          <p class="acceptation"><strong>Le paiement en ligne ouvre dès l'activation de notre revendeur, Lemon Squeezy.</strong> Pour recevoir le lien d'achat le jour de l'ouverture, écrivez-nous.</p>
+          <p><a class="btn btn-primary" href="mailto:contact@tessalio.ch?subject=AdminCH%20-%20ouverture&amp;body=Merci%20de%20me%20pr%C3%A9venir%20%C3%A0%20l%27ouverture%20d%27AdminCH.">Être prévenu à l'ouverture</a></p>
+          <p class="mention-paiement">Vous recevrez l'annonce d'ouverture, puis au plus un rappel. Votre adresse ne sert qu'à cela ; répondez STOP pour ne plus rien recevoir.</p>
         </div>
 
       </div>
-      <p class="mention-paiement">Paiement sécurisé via Lemon Squeezy (revendeur officiel), facture avec la TVA de votre pays, téléchargement immédiat. Aucun remboursement sauf droit impératif.</p>
+      <p class="mention-paiement">Paiement via Lemon Squeezy, merchant of record (revendeur officiel) : il encaisse, émet la facture et applique la TVA de votre pays. Téléchargement immédiat. Remboursement sur simple demande pendant 14 jours.</p>
     </div>
   </section>
 
@@ -193,6 +274,14 @@
         <summary>Que veut dire « non vérifié » dans les données ?</summary>
         <p>Que nous n'avons pas trouvé de source officielle publiée pour cette valeur — par exemple le délai fiscal ordinaire de sept cantons, qui est imprimé individuellement sur chaque déclaration. Nous préférons le dire et donner l'autorité compétente plutôt que d'inscrire une date approximative.</p>
       </details>
+      <details>
+        <summary>Et si le pack ne me convient pas ?</summary>
+        <p>Écrivez à contact@tessalio.ch dans les 14 jours qui suivent l'achat, avec l'adresse e-mail et le numéro de la commande : le remboursement est intégral et sans justification. Il est exécuté par Lemon Squeezy sur votre moyen de paiement d'origine ; votre licence prend alors fin et vous supprimez les fichiers.</p>
+      </details>
+      <details>
+        <summary>Il existe des générateurs de QR-facture gratuits. Pourquoi payer ?</summary>
+        <p>Si vous émettez une QR-facture de temps en temps, le portail de votre banque ou un générateur gratuit suffit. AdminCH s'adresse à ceux qui veulent, au même endroit, une validation qui refuse les combinaisons IBAN et référence, les caractères et les longueurs non conformes, la relecture des QR-factures reçues, et des référentiels TVA, charges sociales et délais cantonaux dont chaque valeur porte sa source.</p>
+      </details>
     </div>
   </section>
 
@@ -220,6 +309,7 @@
     <p class="liens-legaux">
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="cgv.html">CGV</a>
+      <a href="cgv.html#remboursement">Remboursement</a>
       <a href="confidentialite.html">Confidentialité</a>
     </p>
     <p class="origine">Développé à Neuchâtel, Suisse</p>

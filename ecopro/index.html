@@ -9,7 +9,8 @@
 <meta property="og:locale" content="fr_CH">
 <meta property="og:title" content="EcoPro — Suivi des chantiers de pompes à chaleur, du prospect à la maintenance">
 <meta property="og:description" content="Logiciel local pour installateurs de pompes à chaleur en Suisse : pipeline en 8 phases, checklists de documents, devis PDF et QR-factures.">
-<link rel="canonical" href="https://tessalio.ch/ecopro/index.html">
+<link rel="canonical" href="https://tessalio.ch/ecopro/">
+<meta name="robots" content="noindex, follow">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -20,19 +21,83 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Windows",
   "softwareVersion": "1.0",
+  "softwareRequirements": "Windows 10/11, Python 3.12+, un navigateur récent",
+  "inLanguage": "fr-CH",
+  "url": "https://tessalio.ch/ecopro/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tessalio",
+    "url": "https://tessalio.ch/"
+  },
   "offers": {
     "@type": "Offer",
     "price": "12000",
-    "priceCurrency": "CHF"
-  },
-  "url": "https://tessalio.ch/ecopro/"
+    "priceCurrency": "CHF",
+    "url": "https://tessalio.ch/ecopro/#prix"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Où sont stockées les données ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dans un fichier SQLite sur le poste où l'application est installée. L'application ne comporte aucun appel vers un service externe ; la sauvegarde du fichier reste de votre ressort."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il une connexion Internet ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Le serveur tourne sur votre machine et s'ouvre dans le navigateur à l'adresse http://localhost:8000. Le fonctionnement est entièrement local."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on travailler depuis plusieurs postes ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La version 1.0 est prévue pour un poste : le serveur démarre sur 127.0.0.1 et n'est pas exposé au réseau local par défaut. Plusieurs comptes utilisateurs peuvent en revanche se connecter sur ce poste."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "EcoPro s'occupe-t-il des demandes au Programme Bâtiments ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. EcoPro tient la checklist des documents attendus pour le dossier et enregistre le montant que vous saisissez. Il ne remplit aucun formulaire cantonal, ne dépose aucune demande, et la suite du dossier dépend de l'autorité compétente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on reprendre nos fichiers Excel existants ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La version 1.0 ne comporte pas de fonction d'import. Les clients, propriétés et projets se saisissent dans l'application."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment voir le logiciel avant de décider ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'application est livrée avec un jeu de données fictif et un script de démonstration d'environ quatre minutes qui couvre le pipeline, les checklists, le devis PDF, la QR-facture et le planning de maintenance."
+      }
+    }
+  ]
 }
 </script>
 </head>
 <body>
 <header class="site-header">
   <div class="wrap header-inner">
-    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">EcoPro</span></div>
+    <div class="brand"><a class="brand-name" href="/">Tessalio</a><span class="sep">·</span><span class="brand-produit">EcoPro</span></div>
     <nav class="site-nav">
       <a href="#fonctionnalites">Fonctionnalités</a>
       <a href="#prix">Prix</a>
@@ -226,6 +291,7 @@
     <p class="liens-legaux">
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="cgv.html">CGV</a>
+      
       <a href="confidentialite.html">Confidentialité</a>
     </p>
     <p class="origine">Développé à Neuchâtel, Suisse</p>

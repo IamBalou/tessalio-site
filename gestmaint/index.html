@@ -9,7 +9,8 @@
 <meta property="og:locale" content="fr_CH">
 <meta property="og:title" content="GestMaint — Contrats d&#x27;entretien, bons d&#x27;intervention et factures QR sur votre poste.">
 <meta property="og:description" content="GestMaint : logiciel local de gestion d&#x27;interventions et de contrats d&#x27;entretien pour techniciens SAV en Suisse. Bons PDF, facture QR, TVA 8.1%.">
-<link rel="canonical" href="https://tessalio.ch/gestmaint/index.html">
+<link rel="canonical" href="https://tessalio.ch/gestmaint/">
+<meta name="robots" content="noindex, follow">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -20,19 +21,83 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Windows",
   "softwareVersion": "1.0",
+  "softwareRequirements": "Windows 10/11 (macOS et Linux possibles), Python 3.11 ou 3.12, un navigateur web, environ 200 Mo d'espace disque. Aucune connexion internet n'est nécessaire à l'usage.",
+  "inLanguage": "fr-CH",
+  "url": "https://tessalio.ch/gestmaint/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tessalio",
+    "url": "https://tessalio.ch/"
+  },
   "offers": {
     "@type": "Offer",
     "price": "9800",
-    "priceCurrency": "CHF"
-  },
-  "url": "https://tessalio.ch/gestmaint/"
+    "priceCurrency": "CHF",
+    "url": "https://tessalio.ch/gestmaint/#prix"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Où sont stockées les données ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dans un fichier SQLite (gestmaint.db) sur le poste où le logiciel est installé. Aucune donnée n'est transmise à un tiers et l'application fonctionne sans connexion internet. La sauvegarde consiste à copier ce fichier sur un support externe ou un partage du réseau local."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Est-ce que plusieurs personnes peuvent l'utiliser ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le logiciel gère plusieurs comptes utilisateurs et rattache chaque intervention à un technicien. Un écran d'administration permet de créer les comptes, de choisir leur rôle (admin ou technicien) et de désactiver un compte qui ne sert plus. Il est livré configuré pour un poste (écoute sur 127.0.0.1) ; ouvrir l'accès aux autres postes du réseau local demande de modifier le paramètre d'écoute au lancement, ce que le code source livré permet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je reprendre mes données Excel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La version 1.0 ne comprend pas d'import automatique : les clients, équipements et contrats se saisissent dans l'application. Le code source étant livré, un script de reprise peut être écrit à partir du modèle de données."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le QR de paiement est-il utilisable pour encaisser ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le PDF de facture contient un code QR dont le contenu est composé selon les Implementation Guidelines QR-facture, à partir de l'IBAN et de la référence enregistrés. Si les données ne sont pas conformes, le code n'est pas généré et le PDF liste les problèmes. Le bordereau de versement détachable n'est pas imprimé. L'IBAN et la référence livrés sont ceux de la démonstration : il faut y placer les siens et faire contrôler un exemplaire par sa banque avant le premier envoi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment l'accès est-il protégé ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'accès se fait par identifiant et mot de passe ; les mots de passe sont stockés hachés (bcrypt) et la session expire après 24 heures. Toute page consultée sans session renvoie vers l'écran de connexion, et les saisies sont validées côté serveur (dates, NPA, adresse e-mail, périodicité, montants, statuts)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se passent les mises à jour ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La licence est perpétuelle : la version installée continue de fonctionner sans abonnement. La maintenance annuelle est optionnelle et couvre les mises à jour et le support e-mail. Le code source est livré, ce qui permet aussi de faire adapter le logiciel par un prestataire."
+      }
+    }
+  ]
 }
 </script>
 </head>
 <body>
 <header class="site-header">
   <div class="wrap header-inner">
-    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">GestMaint</span></div>
+    <div class="brand"><a class="brand-name" href="/">Tessalio</a><span class="sep">·</span><span class="brand-produit">GestMaint</span></div>
     <nav class="site-nav">
       <a href="#fonctionnalites">Fonctionnalités</a>
       <a href="#prix">Prix</a>
@@ -228,6 +293,7 @@
     <p class="liens-legaux">
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="cgv.html">CGV</a>
+      
       <a href="confidentialite.html">Confidentialité</a>
     </p>
     <p class="origine">Développé à Neuchâtel, Suisse</p>

@@ -9,7 +9,8 @@
 <meta property="og:locale" content="fr_CH">
 <meta property="og:title" content="CtrlElec — Contrôles OIBT, rapports RaSi et échéances de recontrôle sur votre poste">
 <meta property="og:description" content="Logiciel local pour contrôleurs OIBT : clients, installations, mesures, rapport de sécurité PDF, facture avec code QR et registre des échéances.">
-<link rel="canonical" href="https://tessalio.ch/ctrlelec/index.html">
+<link rel="canonical" href="https://tessalio.ch/ctrlelec/">
+<meta name="robots" content="noindex, follow">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -20,19 +21,83 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Windows",
   "softwareVersion": "1.0",
+  "softwareRequirements": "Windows 10/11, Python 3.10 ou plus récent (3.12 recommandé), un navigateur web",
+  "inLanguage": "fr-CH",
+  "url": "https://tessalio.ch/ctrlelec/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tessalio",
+    "url": "https://tessalio.ch/"
+  },
   "offers": {
     "@type": "Offer",
     "price": "11800",
-    "priceCurrency": "CHF"
-  },
-  "url": "https://tessalio.ch/ctrlelec/"
+    "priceCurrency": "CHF",
+    "url": "https://tessalio.ch/ctrlelec/#prix"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Où sont stockées les données de mes clients ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dans un fichier SQLite (ctrlelec.db) sur votre poste. Le serveur n'écoute que sur 127.0.0.1 et le code ne contient aucun appel vers un service externe. Pour sauvegarder, il suffit de copier ce fichier sur le support de votre choix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le rapport de sécurité généré peut-il être remis tel quel ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le PDF reprend les quatre rubriques de l'art. 37 OIBT ainsi que les mesures et défauts saisis. CtrlElec ne remplace pas le contrôleur agréé : la vérification du contenu et la signature du rapport relèvent de votre responsabilité, et son acceptation dépend du destinataire (propriétaire, gestionnaire de réseau)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La facture avec code QR est-elle utilisable directement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le PDF contient un code QR dont le contenu est composé selon les Implementation Guidelines QR-facture (IBAN, montant, référence) ; si les données ne sont pas conformes, le code n'est pas généré et la facture l'indique. Le bordereau détachable n'est pas imprimé. L'IBAN et les coordonnées du créancier livrés sont ceux du jeu de démonstration : ils doivent être remplacés par les vôtres, et un exemplaire contrôlé par votre banque avant le premier envoi à un client."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on travailler à plusieurs contrôleurs ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le logiciel gère plusieurs comptes avec un rôle admin ou contrôleur, et chaque contrôle est rattaché au contrôleur connecté. Un écran d'administration réservé au rôle admin permet de créer les comptes, de modifier leur nom, leur rôle et leur mot de passe, et de les désactiver. L'application est prévue pour un poste, non exposée sur le réseau par défaut."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je reprendre mon portefeuille Excel existant ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La version 1.0 ne comporte pas d'import Excel : la reprise se fait par saisie des clients et des installations dans l'application, avec leur dernière date de contrôle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se déroule une démonstration ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'application est livrée avec un jeu de données fictives et un script de démonstration d'environ quatre minutes qui parcourt le cycle complet : connexion, tableau de bord, création d'un contrôle avec mesures et défauts, rapport RaSi, facture, remise du contrôle et recalcul de l'échéance, puis registre des relances."
+      }
+    }
+  ]
 }
 </script>
 </head>
 <body>
 <header class="site-header">
   <div class="wrap header-inner">
-    <div class="brand"><span class="brand-name">Tessalio</span><span class="sep">·</span><span class="brand-produit">CtrlElec</span></div>
+    <div class="brand"><a class="brand-name" href="/">Tessalio</a><span class="sep">·</span><span class="brand-produit">CtrlElec</span></div>
     <nav class="site-nav">
       <a href="#fonctionnalites">Fonctionnalités</a>
       <a href="#prix">Prix</a>
@@ -230,6 +295,7 @@
     <p class="liens-legaux">
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="cgv.html">CGV</a>
+      
       <a href="confidentialite.html">Confidentialité</a>
     </p>
     <p class="origine">Développé à Neuchâtel, Suisse</p>

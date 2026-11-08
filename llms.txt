@@ -1,0 +1,21 @@
+# Tessalio
+
+> Tessalio est une raison individuelle d'Alexia Tosetti, à Chaumont (Neuchâtel, Suisse). Elle édite AdminCH, un pack numérique d'administration suisse pour indépendants et petites PME, vendu une fois et livré tel quel.
+
+## AdminCH — édition 2026
+- Prix : 290 CHF, paiement unique, licence perpétuelle, usage commercial autorisé (y compris pour ses mandants). Revente et redistribution interdites.
+- Contenu : générateur et validateur de QR-facture (Swiss QR Code, adresse structurée, référence QR et Creditor Reference, relecture d'une QR-facture reçue, syntaxe S1) ; référentiels relevés le 10 septembre 2026 avec la source et la date de chaque valeur : TVA, taux de la dette fiscale nette (52 branches), charges sociales 2026, allocations familiales NE, VD, GE, FR, VS et JU, délais fiscaux des 26 cantons ; quatre skills pour Claude Code ; guide écrit.
+- Fonctionnement : hors ligne, sans compte ni télémétrie ; Python 3.11 ou plus récent ; Windows, macOS, Linux ; fichiers de données lisibles dans Excel.
+- Conditions : livré tel quel, sans support ni mise à jour. Remboursement sur simple demande pendant 14 jours.
+- Limites : ce n'est pas un conseil fiscal ou juridique ; il n'imprime pas la facture complète (il produit le QR code et les valeurs formatées) ; les valeurs sans source officielle sont marquées « non vérifié ».
+- Vente et facturation : Lemon Squeezy, merchant of record.
+
+## Pages
+- AdminCH : https://tessalio.ch/adminch/
+- Conditions générales et licence : https://tessalio.ch/adminch/cgv.html
+- Mentions légales : https://tessalio.ch/adminch/mentions-legales.html
+- Confidentialité : https://tessalio.ch/adminch/confidentialite.html
+- Guide — QR-facture, les quatre erreurs qui font rejeter un paiement : https://tessalio.ch/adminch/qr-facture-quatre-erreurs-rejet-paiement.html
+
+## Contact
+contact@tessalio.ch — réponse sous 2 jours ouvrables. Tessalio, Sous-le-signal 1, 2067 Chaumont, Suisse.
